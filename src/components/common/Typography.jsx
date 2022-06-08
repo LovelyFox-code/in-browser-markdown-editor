@@ -25,7 +25,18 @@ export const H3 = styled.h3`
   font-size: 24px;
   line-height: 32px;
 `;
-
+export const Title = styled.h3`
+font-family: "Roboto";
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 16px;
+letter-spacing: 2px;
+margin: 0;
+padding: 24px;
+text-transform: uppercase;
+color: ${COLORS.gray};
+`;
 export const H4 = styled.h4`
   font-family: "Roboto Slab";
   font-style: normal;
