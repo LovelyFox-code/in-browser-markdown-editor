@@ -2,8 +2,8 @@
 
 This is a solution to the In-browser markdown editor challenge on Frontend Mentor.
 
-### Preview
-	![Preview image](./public/assets/preview.jpg)
+### Preview!
+[Preview image](./public/assets/preview.jpg)
 ### The challenge
 
 Users should be able to:
@@ -21,7 +21,7 @@ Users should be able to:
 
 - Semantic HTML5 markup
 - CSS custom properties
-- Flexbox
+- Flex-box
 - CSS Grid
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
