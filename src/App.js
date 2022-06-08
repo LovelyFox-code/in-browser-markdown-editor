@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import EditorContainer from "./components/EditorContainer/EditorContainer";
+import Navbar from "./components/Navbar/Navbar";
+import Sidebar from "./components/Sidebar/Sidebar";
+import React, { useState} from "react";
+
 
 function App() {
+  const style = {
+    width: "100%"
+  }
+  const flex = {
+    display: "flex"
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={flex}>
+       <Sidebar/>
+        <div style={style}>
+        <Navbar>
+        </Navbar>
+        <EditorContainer/>
+        </div>
+
     </div>
   );
 }
