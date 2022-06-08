@@ -2,7 +2,8 @@ import "./App.css";
 import EditorContainer from "./components/EditorContainer/EditorContainer";
 import Navbar from "./components/Navbar/Navbar";
 import Sidebar from "./components/Sidebar/Sidebar";
-import React, { useState} from "react";
+import React from "react";
+
 
 
 function App() {
