@@ -2,14 +2,16 @@ import React from "react";
 import { COLORS } from "../Common/Colors";
 import { H1 } from "../Common/Typography";
 import styled from "styled-components";
+import ReactMarkdown from "react-markdown";
+
+
 export default function ResultSide() {
   const style = {
     width: "100%",
-    
   };
   const flex = {
     display: "flex",
-    padding: "0 16px"
+    padding: "0 16px",
   };
   const SubNav = styled.div`
     background-color: ${COLORS.dirtyWhite};
@@ -17,10 +19,17 @@ export default function ResultSide() {
     height: 42px;
     align-items: center;
     justify-content: space-between;
-    padding: 0 16px
+    padding: 0 16px;
+  `;
+  const Divider = styled.div`
+    width: 1px;
+    height: 100%;
+    background-color: ${COLORS.lighterGray};
+    position: absolute;
   `;
   return (
-    <div style={style} >
+    <div style={style}>
+      <Divider />
       <SubNav>
         <p>PREVIEW</p>
         <svg width="16" height="12" xmlns="http://www.w3.org/2000/svg">
@@ -31,7 +40,7 @@ export default function ResultSide() {
         </svg>
       </SubNav>
       <div style={flex}>
-        <H1>Welcome to Markdown</H1>
+        <ReactMarkdown># Welcome to Markdown</ReactMarkdown>
       </div>
     </div>
   );
