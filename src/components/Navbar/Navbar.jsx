@@ -4,13 +4,12 @@ import BurgerMenu from './BurgerMenu'
 import SaveBtn from './SaveBtn'
 import styled from 'styled-components'
 import { Row } from '../Grid/Grid'
-import Document from './DocumentName'
 import { COLORS } from '../Common/Colors'
 import Border from './Border'
 import DocumentName from './DocumentName'
-import Sidebar from '../Sidebar/Sidebar'
 
 export default function Navbar() {
+   
     const Nav = styled.nav`
     background-color: ${COLORS.lightBlack};
     display: flex;

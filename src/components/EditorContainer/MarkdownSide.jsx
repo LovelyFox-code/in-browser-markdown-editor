@@ -2,6 +2,7 @@ import React from "react";
 import { MonoP } from "../Common/Typography";
 import styled from "styled-components";
 import { COLORS } from "../Common/Colors";
+
 export default function MarkdownSide() {
   const style = {
     display: "flex",
