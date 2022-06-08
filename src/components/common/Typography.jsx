@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import COLORS from "./Colors";
+import { COLORS } from '../Common/Colors'
 // @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
 export const H1 = styled.h1`
   font-family: "Roboto Slab";
@@ -46,7 +46,7 @@ export const H6 = styled.h6`
   font-weight: 700;
   font-size: 14px;
   line-height: 18px;
-  color: ${COLORS.orange};
+  background-color: ${COLORS.orange};
 `;
 export const RegularP = styled.p`
   font-family: "Roboto Slab";
@@ -63,8 +63,8 @@ export const BoldP = styled.p`
   line-height: 24px;
 `;
 export const MonoP = styled.p`
-    @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
-    font-family: 'Roboto Mono', monospace;
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+  font-family: 'Roboto Mono', monospace;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
