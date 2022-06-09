@@ -2,12 +2,12 @@ import React from "react";
 import { COLORS } from "../Common/Colors";
 import styled from "styled-components";
 import ReactMarkdown from "react-markdown";
-
+import style from "./ResultSide.module.css"
 
 export default function ResultSide(props) {
-  const style = {
-    width: "100%",
-  };
+  // const style = {
+  //   width: "100%",
+  // };
   const SubNav = styled.div`
     background-color: ${COLORS.dirtyWhite};
     display: flex;
@@ -18,7 +18,7 @@ export default function ResultSide(props) {
   `;
   const Divider = styled.div`
     width: 1px;
-    height: 100%;
+    height: 108vh;
     background-color: ${COLORS.lighterGray};
     position: absolute;
   `;
