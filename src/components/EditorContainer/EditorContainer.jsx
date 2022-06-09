@@ -5,7 +5,8 @@ import styled from 'styled-components'
 
 export default function EditorContainer(props) {
     const Container = styled.section`
-        width: 100%;
+        width: 1440px;
+        overflow: hidden;
     `
     const EditorSection = styled.div`
         display: flex;

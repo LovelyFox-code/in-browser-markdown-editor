@@ -17,7 +17,7 @@ export default function Navbar() {
     justify-content: space-between;
     align-items: center;
     color: white;
-    width: 98%;
+    width: 1410px;
     margin: auto;
     padding: 16px 1%;
     `
