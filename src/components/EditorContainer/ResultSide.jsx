@@ -1,17 +1,12 @@
 import React from "react";
 import { COLORS } from "../Common/Colors";
-import { H1 } from "../Common/Typography";
 import styled from "styled-components";
 import ReactMarkdown from "react-markdown";
 
 
-export default function ResultSide() {
+export default function ResultSide(props) {
   const style = {
     width: "100%",
-  };
-  const flex = {
-    display: "flex",
-    padding: "0 16px",
   };
   const SubNav = styled.div`
     background-color: ${COLORS.dirtyWhite};
@@ -27,6 +22,9 @@ export default function ResultSide() {
     background-color: ${COLORS.lighterGray};
     position: absolute;
   `;
+  const textSide = {
+    padding: "0 22px",
+  }
   return (
     <div style={style}>
       <Divider />
@@ -39,8 +37,10 @@ export default function ResultSide() {
           />
         </svg>
       </SubNav>
-      <div style={flex}>
-        <ReactMarkdown># Welcome to Markdown</ReactMarkdown>
+      <div style={textSide}>
+        <ReactMarkdown>
+          {props.markdownText[1].content}
+        </ReactMarkdown>
       </div>
     </div>
   );

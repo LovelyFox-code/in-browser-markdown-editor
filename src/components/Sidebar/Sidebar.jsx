@@ -1,24 +1,21 @@
 import { COLORS } from "../Common/Colors";
 import NewDocumentBtn from "./NewDocumentBtn";
-import Document from "./Document";
+import Documents from "./Documents";
 import Toggle from "../Navbar/Toggle";
 import { Title } from "../Common/Typography";
 
-export default function Sidebar() {
+export default function Sidebar(props) {
   const style = {
     width: "250px",
     backgroundColor: COLORS.black,
     color: COLORS.white,
     height: "100vh",
   };
-
-
   return (
     <div style={style}>
       <Title>MY DOCUMENTS</Title>
       <NewDocumentBtn></NewDocumentBtn>
-      <Document></Document>
-      <Document></Document>
+      <Documents files = {props.files}></Documents>
       <Toggle/>
     </div>
   );

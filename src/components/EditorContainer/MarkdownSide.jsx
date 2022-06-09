@@ -3,7 +3,7 @@ import { MonoP } from "../Common/Typography";
 import styled from "styled-components";
 import { COLORS } from "../Common/Colors";
 
-export default function MarkdownSide() {
+export default function MarkdownSide(props) {
   const style = {
     display: "flex",
     width: "688px",
@@ -15,13 +15,22 @@ export default function MarkdownSide() {
     height: 42px;
     padding: 0 16px;
   `;
+  const TextArea = styled.textarea`
+    width: 100%;
+    height: 100vh;
+    border: none;
+  `
+  const markdown = props.markdownText[1].content
+
   return (
     <div>
       <SubNav>
         <p>MARKDOWN</p>
       </SubNav>
       <div style={style}>
-        <MonoP># Welcome to Markdown</MonoP>
+        <TextArea>
+          {markdown}
+        </TextArea>
       </div>
     </div>
   );
