@@ -101,11 +101,12 @@ blockquote {
     color: #35393F;
 }
 
-blockquote {
+blockquote p{
     font-style: normal;
     font-weight: 700;
     font-size: 14px;
     line-height: 24px;
+    color: #35393F;;
 }
 
 blockquote a {
