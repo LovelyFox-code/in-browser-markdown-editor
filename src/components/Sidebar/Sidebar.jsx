@@ -1,7 +1,7 @@
 import { COLORS } from "../Common/Colors";
 import NewDocumentBtn from "./NewDocumentBtn";
 import Documents from "./Documents";
-import Toggle from "../Navbar/Toggle";
+import Toggle from "./Toggle";
 import { Title } from "../Common/Typography";
 
 export default function Sidebar(props) {
