@@ -25,7 +25,7 @@ export default function Toggle() {
   `;
 
   const Input = styled.input.attrs({ type: "checkbox" })`
-    
+    opacity: 0;
     position: absolute;
     padding: 3%;
     z-index: 2;
@@ -44,6 +44,7 @@ export default function Toggle() {
   };
   const [color, setColor] = useState("gray")
   const [activeColor, setActiveColor] = useState("white")
+  
   const handleColorChange = event =>{
       if(event.target.checked){
           setColor('white')

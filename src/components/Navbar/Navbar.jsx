@@ -1,5 +1,4 @@
 import React from 'react'
-import { H1 } from '../Common/Typography'
 import BurgerMenu from './BurgerMenu'
 import SaveBtn from './SaveBtn'
 import styled from 'styled-components'
@@ -25,6 +24,7 @@ export default function Navbar() {
          padding: 0 24px;
      `   
   return (
+ 
     <Nav>
         <Row>
         <BurgerMenu></BurgerMenu>
