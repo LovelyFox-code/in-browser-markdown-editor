@@ -6,6 +6,7 @@ import { Row } from '../Grid/Grid'
 import { COLORS } from '../Common/Colors'
 import Border from './Border'
 import DocumentName from './DocumentName'
+import DeleteBtn from './DeleteBtn'
 
 export default function Navbar() {
    
@@ -22,7 +23,10 @@ export default function Navbar() {
     `
      const Logo = styled.div`
          padding: 0 24px;
-     `   
+     `  
+
+
+   
   return (
  
     <Nav>
@@ -32,7 +36,11 @@ export default function Navbar() {
         <Border></Border>
         <DocumentName/>
         </Row>
+        <Row>
+        <DeleteBtn>
+        </DeleteBtn>
         <SaveBtn></SaveBtn>
+        </Row>
     </Nav>
    
   )
