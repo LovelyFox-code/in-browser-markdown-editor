@@ -1,8 +1,7 @@
-import React from "react";
+import React, {useContext} from "react";
 import styled from "styled-components";
-import { ThemeProvider } from "styled-components";
-import { COLORS } from "../Common/Colors";
 import SubNav from "./SubNav";
+import { DataContext } from "../Context/DataProvider";
 
 export default function MarkdownSide(props) {
   const style = {
@@ -19,14 +18,15 @@ export default function MarkdownSide(props) {
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
+    background-color: ${props.theme};
   `;
-  const markdown = props.markdownText[1].content;
-
+  const [data, setData] = useContext(DataContext);
+  
   return (
     <div>
       <SubNav title = "Markdown"/>
       <div style={style}>
-        <TextArea>{markdown}</TextArea>
+        <TextArea>{data[0][1].content}</TextArea>
       </div>
     </div>
   );

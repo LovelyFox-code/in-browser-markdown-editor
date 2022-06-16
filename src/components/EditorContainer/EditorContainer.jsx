@@ -3,7 +3,7 @@ import MarkdownSide from './MarkdownSide'
 import ResultSide from './ResultSide'
 import styled from 'styled-components'
 
-export default function EditorContainer(props) {
+export default function EditorContainer() {
     const Container = styled.section`
         width: 1440px;
         overflow: hidden;
@@ -11,14 +11,14 @@ export default function EditorContainer(props) {
     const EditorSection = styled.div`
         display: flex;
     `
+   
     
-
   return (
 
     <Container>
         <EditorSection>
-        <MarkdownSide markdownText = {props.markdownText}/>
-        <ResultSide markdownText = {props.markdownText}/>
+        <MarkdownSide />
+        <ResultSide />
         </EditorSection>
     </Container>
   )
