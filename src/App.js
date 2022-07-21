@@ -3,7 +3,6 @@ import EditorContainer from "./components/EditorContainer/EditorContainer";
 import Navbar from "./components/Navbar/Navbar";
 import Sidebar from "./components/Sidebar/Sidebar";
 import React from "react";
-import data from "../src/data/data.json";
 
 function App() {
   const style = {
@@ -13,13 +12,13 @@ function App() {
   const flex = {
     display: "flex",
   };
- 
+
   return (
     <div style={flex}>
-      <Sidebar files={data} />
+      <Sidebar files={[]} />
       <div style={style}>
         <Navbar></Navbar>
-        <EditorContainer markdownText = {data} />
+        <EditorContainer markdownText={[]} />
       </div>
     </div>
   );

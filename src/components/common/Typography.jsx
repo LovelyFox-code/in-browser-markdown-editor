@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { COLORS } from '../Common/Colors'
+import { COLORS } from './Colors'
 // @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
 export const H1 = styled.h1`
   font-family: "Roboto Slab";

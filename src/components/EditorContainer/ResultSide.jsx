@@ -1,10 +1,11 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import { COLORS } from "../Common/Colors";
 import styled from "styled-components";
 import ReactMarkdown from "react-markdown";
 import style from "./ResultSide.module.css"
 import SubNav from "./SubNav";
 import { DataContext } from "../Context/DataProvider";
+import { TextArea } from "./MarkdownSide";
 export default function ResultSide(props) {
   // const style = {
   //   width: "100%",
@@ -16,19 +17,18 @@ export default function ResultSide(props) {
     background-color: ${COLORS.lighterGray};
     position: absolute;
   `;
-  const textSide = {
-    padding: "0 22px",
-  }
-  const [data, setData] = useContext(DataContext);
+
+  // const [data, setData] = useContext(DataContext);
+  // console.log(data);
   return (
     <div style={style}>
       <Divider />
-      <SubNav title = "Preview"/>
-      <div style={textSide}>
+      <SubNav title="Preview" />
+      <TextArea>
         <ReactMarkdown>
-          {data[0][1].content }
+
         </ReactMarkdown>
-      </div>
+      </TextArea>
     </div>
   );
 }
