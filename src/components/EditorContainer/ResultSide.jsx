@@ -6,10 +6,8 @@ import style from "./ResultSide.module.css"
 import SubNav from "./SubNav";
 import { DataContext } from "../Context/DataProvider";
 import { TextArea } from "./MarkdownSide";
+
 export default function ResultSide(props) {
-  // const style = {
-  //   width: "100%",
-  // };
 
   const Divider = styled.div`
     width: 1px;
@@ -24,11 +22,11 @@ export default function ResultSide(props) {
     <div style={style}>
       <Divider />
       <SubNav title="Preview" />
-      <TextArea>
-        <ReactMarkdown>
-
-        </ReactMarkdown>
-      </TextArea>
+      {/* <TextArea> */}
+      <ReactMarkdown>
+        {props.content}
+      </ReactMarkdown>
+      {/* </TextArea> */}
     </div>
   );
 }

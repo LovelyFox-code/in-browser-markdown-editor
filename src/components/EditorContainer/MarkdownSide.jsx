@@ -19,7 +19,6 @@ export default function MarkdownSide(props) {
     width: "688px",
     padding: "0 16px",
   };
-  console.log("PROPS", props);
 
   // const [data, setData] = useContext(DataContext)
   // console.log(data);
@@ -29,7 +28,7 @@ export default function MarkdownSide(props) {
     <div>
       <SubNav title="Markdown" />
       <div style={style}>
-        <TextArea>{props.content[1]}</TextArea>
+        <TextArea onChange={props.eventHandler}>{props.content}</TextArea>
       </div>
     </div>
   );

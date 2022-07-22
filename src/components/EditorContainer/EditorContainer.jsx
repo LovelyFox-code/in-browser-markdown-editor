@@ -1,27 +1,24 @@
 import React, { useEffect, useState } from 'react'
+import debounce from 'lodash.debounce'
 import MarkdownSide from './MarkdownSide'
 import ResultSide from './ResultSide'
+import { Container, EditorSection } from '../Style/Styled'
 import styled from 'styled-components'
 
 export default function EditorContainer() {
   const Container = styled.section`
-        width: 1440px;
-        overflow: hidden;
-    `
-  const EditorSection = styled.div`
-        display: flex;
-    `
-  const [currentDocument, setCurrentDocument] = useState([])
-  const ID = currentDocument.map(el => el.id);
-  const content = currentDocument.map(el => el.content);
-  console.log(ID);
+  width: 1440px;
+  overflow: hidden;
+  `
+  const [currentDocument, setCurrentDocument] = useState({})
+
   //useEffect
   useEffect(() => {
     //fetch data from API
-    async function getDocument() {
-      const response = await fetch("http://localhost:4000/documents");
-      const document = await response.json()
 
+    async function getDocument() {
+      const response = await fetch("http://localhost:4000/documents/2");
+      const document = await response.json()
       setCurrentDocument(document)
     }
 
@@ -29,16 +26,34 @@ export default function EditorContainer() {
     return () => {
 
     }
+
   }, [])
+  const eventHandler = debounce(
 
+    (e) => {
+      e.preventDefault();
+      // setCurrentDocument({
+      //   content: e.target.value,
+      //   id: currentDocument.id,
+      //   name: currentDocument.name,
+      //   createdAt: currentDocument.createdAt
+      // })
 
+      setCurrentDocument({
+        ...currentDocument,
+        content: e.target.value,
+
+      })
+
+    }, 500
+  )
 
   return (
 
     <Container>
       <EditorSection>
-        <MarkdownSide id={ID} content={content} />
-        <ResultSide />
+        <MarkdownSide content={currentDocument.content} eventHandler={eventHandler} />
+        <ResultSide content={currentDocument.content} />
       </EditorSection>
     </Container>
   )

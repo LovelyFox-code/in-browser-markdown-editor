@@ -1,41 +1,9 @@
-import React, { useState} from "react";
-import styled from "styled-components";
-import { COLORS } from "../Common/Colors";
-import { Row } from "../Grid/Grid";
+import React, { useState } from "react";
+import { Row } from "../Style/Grid";
+import { Input, Label, ModeBtn } from "../Style/Styled";
 
 export default function Toggle() {
-  const ModeBtn = styled.button`
-    width: 48px;
-    height: 24px;
-    background: ${COLORS.gray};
-    border-radius: 12px;
-    border: none;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-  `;
-  const Label = styled.label.attrs({ for: "input" })`
-    width: 18px;
-    height: 18px;
-    background-color: #252b42;
-    position: relative;
-    border-radius: 50%;
-    transition: transform 0.2s linear;
-  `;
 
-  const Input = styled.input.attrs({ type: "checkbox" })`
-    opacity: 0;
-    position: absolute;
-    padding: 3%;
-    z-index: 2;
-    &:checked + ${Label} {
-      transform: translateX(20px);
-    }
-    &:checked {
-      transform: translateX(20px);
-    }
-  `;
   const style = {
     width: "104px",
     left: "24px",
@@ -44,15 +12,15 @@ export default function Toggle() {
   };
   const [color, setColor] = useState("gray")
   const [activeColor, setActiveColor] = useState("white")
-  
-  const handleColorChange = event =>{
-      if(event.target.checked){
-          setColor('white')
-          setActiveColor('gray')
-      }else{
-          setColor('gray')
-          setActiveColor('white')
-      }
+
+  const handleColorChange = event => {
+    if (event.target.checked) {
+      setColor('white')
+      setActiveColor('gray')
+    } else {
+      setColor('gray')
+      setActiveColor('white')
+    }
   }
   return (
     <Row style={style}  >
@@ -63,7 +31,7 @@ export default function Toggle() {
         />
       </svg>
       <ModeBtn>
-        <Input onChange={handleColorChange}/>
+        <Input onChange={handleColorChange} />
         <Label />
       </ModeBtn>
       <svg width="17" height="16" xmlns="http://www.w3.org/2000/svg">

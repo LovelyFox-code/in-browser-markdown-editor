@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { ThemeProvider } from "styled-components";
-import COLORS from "../Common/Colors";
+import { COLORS } from "../Common/Colors";
 
 export default function SubNav(props) {
   const SubNav = styled.div`
@@ -21,13 +21,13 @@ export default function SubNav(props) {
   `;
   SubNav.defaultProps = {
     theme: {
-      main: "#F5F5F5",
-      color: "#7C8187",
+      main: COLORS.white,
+      color: COLORS.gray,
     },
   };
   const theme = {
-    main: "#1D1F22",
-    color: "#C1C4CB",
+    main: COLORS.black,
+    color: COLORS.lightGray,
   };
   return (
     <>
