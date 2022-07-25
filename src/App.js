@@ -12,27 +12,13 @@ function App() {
   const flex = {
     display: "flex",
   };
-  const [id, setId] = useState("");
-
-  console.log(id);
-  useEffect(() => {
-    async function getID() {
-      const response = await fetch("http://localhost:4000/documents");
-      const files = await response.json();
-      console.log(files[0].id);
-
-      setId(files.map((el) => el.id));
-    }
-    getID();
-    return () => {};
-  }, []);
-
+  const [id, setId] = useState("2");
   return (
     <div style={flex}>
-      <Sidebar files={[]} id={id} />
+      <Sidebar setId={setId} />
       <div style={style}>
         <Navbar></Navbar>
-        <EditorContainer />
+        <EditorContainer id={id} />
       </div>
     </div>
   );

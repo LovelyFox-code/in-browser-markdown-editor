@@ -5,47 +5,46 @@ import ResultSide from './ResultSide'
 import { Container, EditorSection } from '../Style/Styled'
 import styled from 'styled-components'
 
-export default function EditorContainer() {
+export default function EditorContainer(props) {
   const Container = styled.section`
   width: 1440px;
   overflow: hidden;
   `
   const [currentDocument, setCurrentDocument] = useState({})
 
+  const currentID = props.id;
+
   //useEffect
   useEffect(() => {
     //fetch data from API
-
     async function getDocument() {
-      const response = await fetch("http://localhost:4000/documents/2");
+      console.log("currentID", currentID);
+      const response = await fetch(`http://localhost:4000/documents/${currentID}`);
       const document = await response.json()
-      setCurrentDocument(document)
+      setCurrentDocument(document);
     }
 
     getDocument();
     return () => {
 
     }
+  }, [currentID])
+  const eventHandler = debounce((e) => {
+    e.preventDefault();
+    // setCurrentDocument({
+    //   content: e.target.value,
+    //   id: currentDocument.id,
+    //   name: currentDocument.name,
+    //   createdAt: currentDocument.createdAt
+    // })
+    console.log(currentDocument);
+    setCurrentDocument({
+      ...currentDocument,
+      content: e.target.value,
 
-  }, [])
-  const eventHandler = debounce(
+    })
 
-    (e) => {
-      e.preventDefault();
-      // setCurrentDocument({
-      //   content: e.target.value,
-      //   id: currentDocument.id,
-      //   name: currentDocument.name,
-      //   createdAt: currentDocument.createdAt
-      // })
-
-      setCurrentDocument({
-        ...currentDocument,
-        content: e.target.value,
-
-      })
-
-    }, 500
+  }, 500
   )
 
   return (

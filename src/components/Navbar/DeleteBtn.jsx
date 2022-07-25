@@ -19,7 +19,7 @@ export default function DeleteBtn() {
           />
         </svg>
       </Icon>
-      {!show && <Modal onClick={closeModal}/>}
+      {!show && <Modal onClick={closeModal} />}
     </>
   );
 }

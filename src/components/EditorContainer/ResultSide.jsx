@@ -19,14 +19,12 @@ export default function ResultSide(props) {
   // const [data, setData] = useContext(DataContext);
   // console.log(data);
   return (
-    <div style={style}>
+    <div>
       <Divider />
       <SubNav title="Preview" />
-      {/* <TextArea> */}
       <ReactMarkdown>
         {props.content}
       </ReactMarkdown>
-      {/* </TextArea> */}
     </div>
   );
 }
