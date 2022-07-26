@@ -1,32 +1,13 @@
 import React from 'react'
 import BurgerMenu from './BurgerMenu'
 import SaveBtn from './SaveBtn'
-import styled from 'styled-components'
 import { Row } from '../Style/Grid'
-import { COLORS } from '../Common/Colors'
 import Border from './Border'
 import DocumentName from './DocumentName'
 import DeleteBtn from './DeleteBtn'
-import SaveModal from './SaveModal'
+import { Logo, Nav } from '../Style/Styled'
 
 export default function Navbar(props) {
-
-  const Nav = styled.nav`
-    background-color: ${COLORS.lightBlack};
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    color: white;
-    width: 1410px;
-    margin: auto;
-    padding: 16px 1%;
-    `
-  const Logo = styled.div`
-         padding: 0 24px;
-     `
-
-
 
   return (
 

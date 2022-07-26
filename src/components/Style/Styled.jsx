@@ -77,7 +77,17 @@ overflow: hidden;
 export const EditorSection = styled.div`
 display: flex;
 `
-
+export const TextArea = styled.textarea`
+width: 100%;
+height: 100vh;
+border: none;
+line-height: 24px;
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+resize: none;
+outline: none;
+`;
 //SUBNAV
 export const SubNavbar = styled.div`
 background-color: ${(props) => props.theme.main};
@@ -136,4 +146,20 @@ export const Overlay = styled.div`
   width: 100%;
   height: 100%;
   z-index: 2;
-` 
+`
+
+//NAVBAR
+export const Nav = styled.nav`
+background-color: ${COLORS.lightBlack};
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+align-items: center;
+color: white;
+width: 1410px;
+margin: auto;
+padding: 16px 1%;
+`
+export const Logo = styled.div`
+     padding: 0 24px;
+ `
