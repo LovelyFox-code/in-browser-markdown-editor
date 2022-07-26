@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 import SubNav from "./SubNav";
 import { DataContext } from "../Context/DataProvider";
+import { Wrapper } from "../Style/Styled";
 
 export const TextArea = styled.textarea`
 width: 100%;
@@ -19,17 +20,12 @@ export default function MarkdownSide(props) {
     width: "688px",
     padding: "0 16px",
   };
-
-  // const [data, setData] = useContext(DataContext)
-  // console.log(data);
-  // const currentContext = props.content.map(el => <TextArea>{el}</TextArea>)
-
   return (
-    <div>
+    <Wrapper>
       <SubNav title="Markdown" />
       <div style={style}>
         <TextArea onChange={props.eventHandler}>{props.content}</TextArea>
       </div>
-    </div>
+    </Wrapper>
   );
 }

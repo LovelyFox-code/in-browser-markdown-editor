@@ -1,14 +1,11 @@
 import React, { useState } from "react";
 
 
-export default function BurgerMenu() {
-  const [open, setOpen] = useState(false)
-  const handleToggle = () => {
-    setOpen((prev) => !prev)
-  };
+export default function BurgerMenu(props) {
+
   return (
-    <div onClick={handleToggle}>
-      {open ? (
+    <div onClick={props.handleToggle}>
+      {props.open ? (
         <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
           <g fill="#FFF" fill-rule="evenodd">
             <path d="M2.1.686 23.315 21.9l-1.415 1.415L.686 2.1z" />

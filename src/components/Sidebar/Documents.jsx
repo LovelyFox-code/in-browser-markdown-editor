@@ -2,11 +2,7 @@ import React from "react";
 import { Document, Form, Icon, InputSideBar, Label } from "../Style/Styled";
 
 export default function Documents(props) {
-
-
-
   const files = props.files;
-  console.log(files);
   const fileNames = files.map(file => <Document onClick={() => props.handleClick(file.id)}>
     <Icon width="14" height="16" xmlns="http://www.w3.org/2000/svg">
       <path

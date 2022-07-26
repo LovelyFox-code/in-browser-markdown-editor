@@ -95,3 +95,45 @@ letter-spacing: 2px;
 color: ${(props) => props.theme.color};
 text-transform: uppercase;
 `;
+//DIVIDER
+export const Divider = styled.div`
+width: 1px;
+height: 108vh;
+background-color: ${COLORS.lighterGray};
+position: absolute;
+`;
+
+export const Wrapper = styled.div`
+    width: 100%;
+`
+
+//MODALS
+export const Box = styled.div`
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+background: #ffffff;
+border-radius: 4px;
+width: 300px;
+padding: 24px;
+`;
+export const Button = styled.button`
+  background: #E46643;
+  border-radius: 4px;
+  width: 100%;
+  height: 40px;
+  padding: 10px 63px;
+  color: white;
+  border: none;
+`
+
+export const Overlay = styled.div`
+  position: absolute;
+  background-color: #15161981;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+` 

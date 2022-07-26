@@ -6,25 +6,25 @@ import style from "./ResultSide.module.css"
 import SubNav from "./SubNav";
 import { DataContext } from "../Context/DataProvider";
 import { TextArea } from "./MarkdownSide";
+import { Divider, Wrapper } from "../Style/Styled";
 
 export default function ResultSide(props) {
-
-  const Divider = styled.div`
-    width: 1px;
-    height: 108vh;
-    background-color: ${COLORS.lighterGray};
-    position: absolute;
-  `;
+  const container = {
+    padding: "0 16px",
+    width: "100%"
+  }
 
   // const [data, setData] = useContext(DataContext);
-  // console.log(data);
+
   return (
-    <div>
+    <Wrapper>
       <Divider />
       <SubNav title="Preview" />
-      <ReactMarkdown>
-        {props.content}
-      </ReactMarkdown>
-    </div>
+      <div style={container}>
+        <ReactMarkdown>
+          {props.content}
+        </ReactMarkdown>
+      </div>
+    </Wrapper>
   );
 }

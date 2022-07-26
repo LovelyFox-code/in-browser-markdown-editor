@@ -18,6 +18,7 @@ export default function SubNav(props) {
     letter-spacing: 2px;
     color: ${(props) => props.theme.color};
     text-transform: uppercase;
+    width: 100%;
   `;
   SubNav.defaultProps = {
     theme: {
