@@ -4,7 +4,7 @@ import { COLORS } from "../Common/Colors";
 
 export default function SubNav(props) {
   const SubNav = styled.div`
-    background-color: ${(props) => props.theme.main};
+    background-color: ${props.color ? "#F5F5F5" : "#1D1F22"};
     display: flex;
     height: 42px;
     align-items: center;
@@ -16,26 +16,15 @@ export default function SubNav(props) {
     font-size: 14px;
     line-height: 16px;
     letter-spacing: 2px;
-    color: ${(props) => props.theme.color};
+    color: ${props.color ? "#7C8187" : "#C1C4CB"};
     text-transform: uppercase;
     width: 100%;
   `;
-  SubNav.defaultProps = {
-    theme: {
-      main: COLORS.white,
-      color: COLORS.gray,
-    },
-  };
-  const theme = {
-    main: COLORS.black,
-    color: COLORS.lightGray,
-  };
+
   return (
-    <>
-      <ThemeProvider theme={theme}>
-        <SubNav>{props.title}</SubNav>
-      </ThemeProvider>
-      <SubNav>{props.title}</SubNav>
-    </>
+
+
+    <SubNav>{props.title}</SubNav>
+
   );
 }

@@ -11,7 +11,9 @@ import { Divider, Wrapper } from "../Style/Styled";
 export default function ResultSide(props) {
   const container = {
     padding: "0 16px",
-    width: "100%"
+    width: "100%",
+    height: "100%",
+    backgroundColor: props.color ? "white" : "black",
   }
 
   // const [data, setData] = useContext(DataContext);
@@ -19,7 +21,7 @@ export default function ResultSide(props) {
   return (
     <Wrapper>
       <Divider />
-      <SubNav title="Preview" />
+      <SubNav title="Preview" color={props.color} />
       <div style={container}>
         <ReactMarkdown>
           {props.content}

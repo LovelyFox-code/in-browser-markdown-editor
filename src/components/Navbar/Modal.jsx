@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import { H4 } from "../Common/Typography";
 import { Button, Overlay, Box } from "../Style/Styled";
 

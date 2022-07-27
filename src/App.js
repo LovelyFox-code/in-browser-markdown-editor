@@ -82,9 +82,20 @@ function App() {
     }
   }, [isClicked]);
 
+  //TOGGLE COLOR-THEME
+  const [color, setColor] = useState(true);
+  const handleColorChange = () => {
+    setColor(!color);
+  };
   return (
     <div style={flex}>
-      {open ? <Sidebar setId={setId} /> : null}
+      {open ? (
+        <Sidebar
+          setId={setId}
+          handleColorChange={handleColorChange}
+          color={color}
+        />
+      ) : null}
       <div style={style}>
         {/* <SaveModal /> */}
         <Navbar
@@ -96,6 +107,7 @@ function App() {
           id={id}
           currentDocument={currentDocument}
           eventHandler={eventHandler}
+          color={color}
         />
       </div>
     </div>

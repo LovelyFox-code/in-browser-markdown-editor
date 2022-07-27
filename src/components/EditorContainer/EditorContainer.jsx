@@ -3,13 +3,12 @@ import debounce from 'lodash.debounce'
 import MarkdownSide from './MarkdownSide'
 import ResultSide from './ResultSide'
 import { Container, EditorSection } from '../Style/Styled'
-import styled from 'styled-components'
-
+// export const Container = styled.section`
+// width: 1440px;
+// overflow: hidden;
+// `
 export default function EditorContainer(props) {
-  const Container = styled.section`
-  width: 1440px;
-  overflow: hidden;
-  `
+
   return (
 
     <Container>
@@ -17,8 +16,11 @@ export default function EditorContainer(props) {
         <MarkdownSide content={props.currentDocument.content}
           eventHandler={props.eventHandler}
           setUpdatedDocument={props.setUpdatedDocument}
-          saveDocument={props.saveDocument} />
-        <ResultSide content={props.currentDocument.content} />
+          saveDocument={props.saveDocument}
+          color={props.color}
+        />
+        <ResultSide content={props.currentDocument.content}
+          color={props.color} />
       </EditorSection>
     </Container>
   )

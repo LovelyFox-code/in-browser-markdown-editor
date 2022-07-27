@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Modal from "./Modal";
+
+export const Icon = styled.div`
+      margin-right: 24px;
+`;
 export default function DeleteBtn() {
-  const Icon = styled.div`
-    margin-right: 24px;
-  `;
+
 
   const [show, setShow] = useState(true);
   const openModal = () => setShow(false);
