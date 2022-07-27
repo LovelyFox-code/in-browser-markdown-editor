@@ -19,8 +19,7 @@ export default function Navbar(props) {
         <DocumentName />
       </Row>
       <Row>
-        <DeleteBtn>
-        </DeleteBtn>
+        <DeleteBtn deleteDocument={props.deleteDocument} />
         <SaveBtn isSaved={props.isSaved} />
       </Row>
     </Nav>

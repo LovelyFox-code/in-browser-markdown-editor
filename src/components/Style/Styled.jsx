@@ -119,6 +119,7 @@ export const Box = styled.div`
   border-radius: 4px;
   width: 300px;
   padding: 24px;
+  text-align: center;
 `;
 export const Button = styled.button`
 background: #e46643;

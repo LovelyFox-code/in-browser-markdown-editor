@@ -82,6 +82,25 @@ function App() {
     }
   }, [isClicked]);
 
+  //DELETE DOCUMENT
+  const deleteDocument = async () => {
+    var requestOptions = {
+      method: "DELETE",
+      redirect: "follow",
+    };
+
+    fetch(`http://localhost:4000/documents/${id}`, requestOptions)
+      .then((response) => response.text())
+      .then((result) => console.log(result))
+      .catch((error) => console.log("error", error));
+    setCurrentDocument({});
+    setId("");
+    window.location.reload(false);
+    console.log("CLICKED DELETE");
+  };
+
+  console.log("currentDocument", currentDocument);
+
   //TOGGLE COLOR-THEME
   const [color, setColor] = useState(true);
   const handleColorChange = () => {
@@ -102,6 +121,7 @@ function App() {
           handleToggle={handleToggle}
           open={open}
           isSaved={isSaved}
+          deleteDocument={deleteDocument}
         ></Navbar>
         <EditorContainer
           id={id}
