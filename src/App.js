@@ -12,7 +12,7 @@ function App() {
   const flex = {
     display: "flex",
   };
-  //useState
+  //useStates
   const [open, setOpen] = useState(true);
   const [files, setFiles] = useState([]);
   const [id, setId] = useState("1");
@@ -97,7 +97,42 @@ function App() {
     });
     setFiles(newFiles);
   };
+  //CREATE DOCUMENT
+  const createDocument = async () => {
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
 
+    var raw = JSON.stringify({
+      name: "untitled-document.md",
+      content: "### start create your new Mardown document",
+    });
+
+    var requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: raw,
+    };
+    const response = await fetch(
+      "http://localhost:4000/documents",
+      requestOptions
+    );
+    console.log(response);
+    const result = await response.json();
+    setCurrentDocument(result);
+    const newFilesArr = files.push(result);
+    console.log(newFilesArr);
+    // .then((response) => {
+    //   response.text();
+    //   console.log("response", response);
+    // })
+    // .then((result) => {
+    //   setId(result.id);
+    //   setCurrentDocument(result);
+    //   files.push(result);
+    //   console.log("result", result);
+    // })
+    // .catch((error) => console.log("error", error));
+  };
   //SIDEBAR
   useEffect(() => {
     //fetch data from API
@@ -119,6 +154,7 @@ function App() {
     <div style={flex}>
       {open ? (
         <Sidebar
+          createDocument={createDocument}
           setId={setId}
           handleColorChange={handleColorChange}
           color={color}
@@ -132,6 +168,8 @@ function App() {
           open={open}
           isSaved={isSaved}
           deleteDocument={deleteDocument}
+          files={files}
+          id={id}
         ></Navbar>
         <EditorContainer
           id={id}

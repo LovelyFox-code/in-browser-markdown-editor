@@ -20,6 +20,7 @@ color: #7c8187;
 `;
 export const Input = styled.input`
 background: #2b2d31;
+
 border: none;
 &::placeholder {
   font-family: "Roboto";
@@ -33,7 +34,13 @@ border: none;
 export const Icon = styled.svg`
 padding-right: 16px;
 `;
-export default function DocumentName() {
+export default function DocumentName(props) {
+
+  const currentName = props.files.map(file => {
+    if (file.id === props.id) {
+      return file.name;
+    }
+  });
 
   return (
     <DocumentNav>
@@ -46,7 +53,7 @@ export default function DocumentName() {
 
       <Form>
         <Label>Document Name</Label>
-        <Input placeholder="welcome.md" />
+        <Input value={currentName} />
       </Form>
     </DocumentNav>
   );

@@ -1,6 +1,5 @@
 import React from "react";
-import styled, { ThemeProvider } from "styled-components";
-import { COLORS } from "../Common/Colors";
+import styled from "styled-components";
 
 export default function SubNav(props) {
   const SubNav = styled.div`

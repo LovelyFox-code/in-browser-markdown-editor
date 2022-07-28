@@ -20,7 +20,7 @@ export default function Sidebar(props) {
   return (
     <div style={style}>
       <Title>MY DOCUMENTS</Title>
-      <NewDocumentBtn></NewDocumentBtn>
+      <NewDocumentBtn createDocument={props.createDocument} />
       <Documents files={props.files} handleClick={handleClick}></Documents>
       <Toggle handleColorChange={props.handleColorChange} setColor={props.setColor} activeColor={props.activeColor} color={props.color} />
     </div>
