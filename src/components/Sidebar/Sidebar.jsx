@@ -12,34 +12,16 @@ export default function Sidebar(props) {
     color: COLORS.white,
     height: "115vh",
   };
-  //useState
-  const [files, setFiles] = useState([]);
-
-
-  //useEffect
-  useEffect(() => {
-    //fetch data from API
-    async function getFile() {
-      const response = await fetch("http://localhost:4000/documents");
-      const files = await response.json();
-      setFiles(files);
-    }
-
-    getFile();
-    return () => { };
-  }, []);
-  // props.setId("TFZ_7iX")
+  //open content by id
   const handleClick = (id) => {
     props.setId(id)
-    console.log("ID", id);
-    console.log(files);
   }
 
   return (
     <div style={style}>
       <Title>MY DOCUMENTS</Title>
       <NewDocumentBtn></NewDocumentBtn>
-      <Documents files={files} handleClick={handleClick}></Documents>
+      <Documents files={props.files} handleClick={handleClick}></Documents>
       <Toggle handleColorChange={props.handleColorChange} setColor={props.setColor} activeColor={props.activeColor} color={props.color} />
     </div>
   );

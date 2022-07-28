@@ -1,12 +1,7 @@
-import React, { useEffect, useState } from 'react'
-import debounce from 'lodash.debounce'
+import React from 'react'
 import MarkdownSide from './MarkdownSide'
 import ResultSide from './ResultSide'
 import { Container, EditorSection } from '../Style/Styled'
-// export const Container = styled.section`
-// width: 1440px;
-// overflow: hidden;
-// `
 export default function EditorContainer(props) {
 
   return (

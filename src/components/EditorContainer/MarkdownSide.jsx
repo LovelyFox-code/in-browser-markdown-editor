@@ -22,12 +22,11 @@ export default function MarkdownSide(props) {
     padding: "0 16px",
     backgroundColor: props.color ? "white" : "black",
   };
-  console.log(props.content);
   return (
     <Wrapper>
       <SubNav title="Markdown" color={props.color} />
       <div style={style}>
-        <TextArea onChange={props.eventHandler}>{props.content}</TextArea>
+        <TextArea value={props.content} onChange={props.eventHandler}>{props.content}</TextArea>
       </div>
     </Wrapper>
   );

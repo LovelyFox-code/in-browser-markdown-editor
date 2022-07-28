@@ -4,7 +4,6 @@ import Navbar from "./components/Navbar/Navbar";
 import Sidebar from "./components/Sidebar/Sidebar";
 import React, { useState, useEffect } from "react";
 import debounce from "lodash.debounce";
-import SaveModal from "./components/Navbar/SaveModal";
 function App() {
   const style = {
     width: "1440px",
@@ -13,17 +12,20 @@ function App() {
   const flex = {
     display: "flex",
   };
+  //useState
+  const [open, setOpen] = useState(true);
+  const [files, setFiles] = useState([]);
+  const [id, setId] = useState("1");
+  const [currentDocument, setCurrentDocument] = useState({});
+  const [isClicked, setIsClicked] = useState(false);
+  const [color, setColor] = useState(true);
 
   //open close Sidebar
-  const [open, setOpen] = useState(false);
   const handleToggle = () => {
     setOpen((prev) => !prev);
   };
-  //UPDATE
-  const [id, setId] = useState("1");
 
-  const [currentDocument, setCurrentDocument] = useState({});
-  //useEffect
+  //UPDATE
   useEffect(() => {
     //fetch data from API
     async function getDocument() {
@@ -31,7 +33,6 @@ function App() {
       const document = await response.json();
       setCurrentDocument(document);
     }
-
     getDocument();
     return () => {};
   }, [id]);
@@ -50,18 +51,16 @@ function App() {
     });
   }, 500);
 
-  const [isClicked, setIsClicked] = useState(false);
   const isSaved = () => {
     setIsClicked(true);
   };
+
   //SAVE DOCUMENT
   useEffect(() => {
     async function saveDocument() {
-      console.log(currentDocument.content);
       var myHeaders = new Headers();
       myHeaders.append("Content-Type", "application/json");
       const requestOptions = {
-        // ...currentDocument,
         method: "PATCH",
         body: JSON.stringify(currentDocument),
         headers: myHeaders,
@@ -86,23 +85,33 @@ function App() {
   const deleteDocument = async () => {
     var requestOptions = {
       method: "DELETE",
-      redirect: "follow",
     };
-
     fetch(`http://localhost:4000/documents/${id}`, requestOptions)
       .then((response) => response.text())
       .then((result) => console.log(result))
       .catch((error) => console.log("error", error));
     setCurrentDocument({});
     setId("");
-    window.location.reload(false);
-    console.log("CLICKED DELETE");
+    const newFiles = files.filter((file) => {
+      return file.id !== id;
+    });
+    setFiles(newFiles);
   };
 
-  console.log("currentDocument", currentDocument);
+  //SIDEBAR
+  useEffect(() => {
+    //fetch data from API
+    async function getFile() {
+      const response = await fetch("http://localhost:4000/documents");
+      const files = await response.json();
+      setFiles(files);
+    }
+
+    getFile();
+    return () => {};
+  }, []);
 
   //TOGGLE COLOR-THEME
-  const [color, setColor] = useState(true);
   const handleColorChange = () => {
     setColor(!color);
   };
@@ -113,6 +122,7 @@ function App() {
           setId={setId}
           handleColorChange={handleColorChange}
           color={color}
+          files={files}
         />
       ) : null}
       <div style={style}>

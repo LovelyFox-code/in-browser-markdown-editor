@@ -1,136 +1,120 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;700&display=swap");
-*{
-    margin-top: 0;
+* {
+  margin-top: 0;
+}
+.dark {
+  --font-color: white;
 }
 .container {
-    padding: 0 16px;
-  }
+  padding: 0 16px;
+}
 h1 {
-    font-family: 'Roboto Slab';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 32px;
-    line-height: 42px;
-    color: #35393F;
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 42px;
+  /* color: #35393F; */
+  color: var(--font-color);
 }
-
-
 h2 {
-    font-family: 'Roboto Slab';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 28px;
-    line-height: 37px;
-    color: #35393F;
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 28px;
+  line-height: 37px;
+  color: #35393f;
 }
-
-
 h3 {
-    font-family: "Roboto Slab";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 32px;
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
 }
-
-h3 {
-    font-family: "Roboto Slab";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 21px;
-}
-
 h4 {
-    font-family: "Roboto Slab";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 18px;
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
 }
 
 h5 {
-    font-family: "Roboto Slab";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 24px;
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
 }
 
 h6 {
-    font-family: "Roboto Slab";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 24px;
-    color: #E46643;
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 24px;
+  color: #e46643;
 }
-
 p {
-    font-family: 'Roboto Slab';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 24px;
-    color: #7C8187;
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #7c8187;
 }
-
-ol>li {
-    font-family: 'Roboto Slab';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 24px;
-    color: #7C8187;
+ol > li {
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #7c8187;
 }
-
-ul>li {
-    font-family: 'Roboto Slab';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 24px;
-    color: #7C8187;
+ul > li {
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #7c8187;
 }
-
-ul>li::marker {
-    color: #E46643;
+ul > li::marker {
+  color: #e46643;
 }
-
 blockquote {
-    background: #F5F5F5;
-    border-radius: 4px;
-    border-left: 4px solid #E46643;
-    padding: 24px;
-    margin: 0;
-    color: #35393F;
+  background: #f5f5f5;
+  border-radius: 4px;
+  border-left: 4px solid #e46643;
+  padding: 24px;
+  margin: 0;
+  color: #35393f;
 }
 
-blockquote p{
-    font-style: normal;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 24px;
-    color: #35393F;;
+blockquote p {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 24px;
+  color: #35393f;
 }
-
 blockquote a {
-    font-style: normal;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 24px;
-    text-decoration-line: underline;
-    color: #35393F;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 24px;
+  text-decoration-line: underline;
+  color: #35393f;
 }
-
 pre {
-    background: #F5F5F5;
-    border-radius: 4px;
-    padding: 24px;
-    font-family: 'Roboto Mono';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 24px;
-    color: #35393F;
+  background: #f5f5f5;
+  border-radius: 4px;
+  padding: 24px;
+  font-family: "Roboto Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #35393f;
 }
