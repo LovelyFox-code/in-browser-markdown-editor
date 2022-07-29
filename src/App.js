@@ -20,6 +20,12 @@ function App() {
   const [isClicked, setIsClicked] = useState(false);
   const [color, setColor] = useState(true);
 
+  let createdTime = new Date();
+  let dd = String(createdTime.getDate()).padStart(2, "0");
+  let mm = String(createdTime.getMonth() + 1).padStart(2, "0"); //January is 0!
+  let yyyy = createdTime.getFullYear();
+  createdTime = dd + "-" + mm + "-" + yyyy;
+
   //open close Sidebar
   const handleToggle = () => {
     setOpen((prev) => !prev);
@@ -38,12 +44,6 @@ function App() {
   }, [id]);
   const eventHandler = debounce((e) => {
     e.preventDefault();
-    // setCurrentDocument({
-    //   content: e.target.value,
-    //   id: currentDocument.id,
-    //   name: currentDocument.name,
-    //   createdAt: currentDocument.createdAt
-    // })
     console.log(currentDocument);
     setCurrentDocument({
       ...currentDocument,
@@ -51,11 +51,11 @@ function App() {
     });
   }, 500);
 
+  //SAVE DOCUMENT
   const isSaved = () => {
     setIsClicked(true);
   };
 
-  //SAVE DOCUMENT
   useEffect(() => {
     async function saveDocument() {
       var myHeaders = new Headers();
@@ -68,10 +68,10 @@ function App() {
       const response = await fetch(
         `http://localhost:4000/documents/${id}`,
         requestOptions
-      )
-        .then((response) => response.text())
-        .then((result) => console.log(result))
-        .catch((error) => console.log("error", error));
+      );
+      // .then((response) => response.text())
+      // .then((result) => console.log(result))
+      // .catch((error) => console.log("error", error));
       const document = await response.json();
       console.log(document);
     }
@@ -81,6 +81,33 @@ function App() {
     }
   }, [isClicked]);
 
+  //SAVE NAME
+  const saveName = async () => {
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    const requestOptions = {
+      method: "PATCH",
+      body: JSON.stringify(currentDocument.name),
+      headers: myHeaders,
+    };
+    const response = await fetch(
+      `http://localhost:4000/documents/${id}`,
+      requestOptions
+    );
+    const result = await response.json();
+
+    console.log("RESPONSE", response);
+    console.log("RESULT", result);
+    console.log(currentDocument.name);
+    console.log("CHANGED?");
+  };
+  const handleName = debounce((e) => {
+    e.preventDefault();
+    setCurrentDocument({
+      ...currentDocument,
+      name: e.target.value,
+    });
+  }, 500);
   //DELETE DOCUMENT
   const deleteDocument = async () => {
     var requestOptions = {
@@ -105,6 +132,7 @@ function App() {
     var raw = JSON.stringify({
       name: "untitled-document.md",
       content: "### start create your new Mardown document",
+      createdAt: createdTime,
     });
 
     var requestOptions = {
@@ -116,11 +144,11 @@ function App() {
       "http://localhost:4000/documents",
       requestOptions
     );
-    console.log(response);
     const result = await response.json();
     setCurrentDocument(result);
-    const newFilesArr = files.push(result);
-    console.log(newFilesArr);
+    files.push(result);
+    console.log(result);
+
     // .then((response) => {
     //   response.text();
     //   console.log("response", response);
@@ -150,6 +178,7 @@ function App() {
   const handleColorChange = () => {
     setColor(!color);
   };
+
   return (
     <div style={flex}>
       {open ? (
@@ -170,6 +199,8 @@ function App() {
           deleteDocument={deleteDocument}
           files={files}
           id={id}
+          saveName={saveName}
+          handleName={handleName}
         ></Navbar>
         <EditorContainer
           id={id}

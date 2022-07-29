@@ -22,6 +22,7 @@ export const Input = styled.input`
 background: #2b2d31;
 
 border: none;
+color: #ffffff;
 &::placeholder {
   font-family: "Roboto";
   font-style: normal;
@@ -36,12 +37,7 @@ padding-right: 16px;
 `;
 export default function DocumentName(props) {
 
-  const currentName = props.files.map(file => {
-    if (file.id === props.id) {
-      return file.name;
-    }
-  });
-
+  const file = props.files.find(file => file.id === props.id);
   return (
     <DocumentNav>
       <Icon width="14" height="16" xmlns="http://www.w3.org/2000/svg">
@@ -53,7 +49,7 @@ export default function DocumentName(props) {
 
       <Form>
         <Label>Document Name</Label>
-        <Input value={currentName} />
+        <Input onChange={props.handleName} placeholder={file?.name} type="text" />
       </Form>
     </DocumentNav>
   );
