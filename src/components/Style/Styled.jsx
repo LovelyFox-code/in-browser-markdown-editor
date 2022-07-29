@@ -19,13 +19,15 @@ export const Label = styled.label.attrs({ htmlFor: "input" })`
   position: relative;
   border-radius: 50%;
   transition: transform 0.2s linear;
+  
 `;
 
 export const Input = styled.input.attrs({ type: "checkbox" })`
   opacity: 0;
   position: absolute;
-  padding: 3%;
+  padding: 40px;
   z-index: 2;
+  cursor: pointer;
   &:checked + ${Label} {
     transform: translateX(20px);
   }
@@ -43,11 +45,14 @@ export const Document = styled.div`
 `;
 export const Form = styled.form`
   width: 100px;
+  cursor: pointer;
 `;
 export const InputSideBar = styled.input`
   background: ${COLORS.black};
   border: none;
   width: 100%;
+  outline: none;
+  cursor: pointer;
   &::placeholder {
     font-family: "Roboto";
     font-style: normal;
@@ -59,6 +64,7 @@ export const InputSideBar = styled.input`
 `;
 export const Icon = styled.svg`
   padding-right: 16px;
+  cursor: pointer;
 `;
 
 //EDITOR CONTAINER
@@ -128,6 +134,7 @@ background: #e46643;
     padding: 10px 30px;
     color: white;
     border: none;
+    cursor: pointer;
 `;
 
 export const Overlay = styled.div`
@@ -157,6 +164,7 @@ export const Logo = styled.div`
 `;
 export const IconDelete = styled.div`
   margin-right: 24px;
+  cursor: pointer;
 `;
 export const DocumentName = styled.div`
   display: flex;
@@ -187,3 +195,6 @@ export const InputNav = styled.input`
     color: #ffffff;
   }
 `;
+export const Burger = styled.div`
+cursor: pointer;
+`

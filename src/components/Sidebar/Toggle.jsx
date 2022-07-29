@@ -19,8 +19,8 @@ export default function Toggle(props) {
           fill={props.color ? 'white' : 'gray'}
         />
       </svg>
-      <ModeBtn>
-        <Input onClick={() => props.handleColorChange()} />
+      <ModeBtn >
+        <Input onClick={() => props.handleColorChange()} x />
         <Label />
       </ModeBtn>
       <svg width="17" height="16" xmlns="http://www.w3.org/2000/svg">

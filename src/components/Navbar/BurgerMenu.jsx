@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
+import { Burger } from "../Style/Styled";
 
 
 export default function BurgerMenu(props) {
 
   return (
-    <div onClick={props.handleToggle}>
+    <Burger onClick={props.handleToggle}>
       {props.open ? (
         <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
           <g fill="#FFF" fillRule="evenodd">
@@ -19,6 +20,6 @@ export default function BurgerMenu(props) {
           </g>
         </svg>
       )}
-    </div>
+    </Burger>
   );
 }

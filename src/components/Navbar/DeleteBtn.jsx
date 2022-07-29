@@ -4,6 +4,7 @@ import Modal from "./Modal";
 
 export const Icon = styled.div`
       margin-right: 24px;
+      cursor: pointer;
 `;
 export default function DeleteBtn(props) {
 
