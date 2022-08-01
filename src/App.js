@@ -42,14 +42,14 @@ function App() {
     getDocument();
     return () => {};
   }, [id]);
-  const eventHandler = debounce((e) => {
+  const eventHandler = (e) => {
     e.preventDefault();
     console.log(currentDocument);
     setCurrentDocument({
       ...currentDocument,
       content: e.target.value,
     });
-  }, 500);
+  };
 
   //SAVE DOCUMENT
   const isSaved = () => {
@@ -82,12 +82,14 @@ function App() {
   }, [isClicked]);
 
   //SAVE NAME
-  const saveName = async () => {
+
+  const saveName = async (e) => {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
+    console.log("currentDocument", currentDocument);
     const requestOptions = {
       method: "PATCH",
-      body: JSON.stringify(currentDocument.name),
+      body: JSON.stringify({ ...currentDocument, name: e.target.value }),
       headers: myHeaders,
     };
     const response = await fetch(
@@ -95,19 +97,20 @@ function App() {
       requestOptions
     );
     const result = await response.json();
-
-    console.log("RESPONSE", response);
     console.log("RESULT", result);
-    console.log(currentDocument.name);
-    console.log("CHANGED?");
-  };
-  const handleName = debounce((e) => {
-    e.preventDefault();
-    setCurrentDocument({
-      ...currentDocument,
-      name: e.target.value,
+    const updatedFiles = files.map((file) => {
+      if (file.id === id) {
+        return result;
+      }
+      return file;
     });
-  }, 500);
+    console.log("updatedFiles", updatedFiles);
+    setFiles(updatedFiles);
+    setCurrentDocument(result);
+  };
+
+  // console.log("FILES", files[0].name);
+
   //DELETE DOCUMENT
   const deleteDocument = async () => {
     var requestOptions = {
@@ -147,19 +150,6 @@ function App() {
     const result = await response.json();
     setCurrentDocument(result);
     files.push(result);
-    console.log(result);
-
-    // .then((response) => {
-    //   response.text();
-    //   console.log("response", response);
-    // })
-    // .then((result) => {
-    //   setId(result.id);
-    //   setCurrentDocument(result);
-    //   files.push(result);
-    //   console.log("result", result);
-    // })
-    // .catch((error) => console.log("error", error));
   };
   //SIDEBAR
   useEffect(() => {
@@ -200,7 +190,7 @@ function App() {
           files={files}
           id={id}
           saveName={saveName}
-          handleName={handleName}
+          // handleName={handleName}
         ></Navbar>
         <EditorContainer
           id={id}

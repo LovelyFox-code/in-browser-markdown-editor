@@ -49,7 +49,7 @@ export default function DocumentName(props) {
 
       <Form>
         <Label>Document Name</Label>
-        <Input onChange={props.handleName} placeholder={file?.name} type="text" />
+        <Input onChange={(e) => props.saveName(e)} placeholder={file?.name} type="text" />
       </Form>
     </DocumentNav>
   );
