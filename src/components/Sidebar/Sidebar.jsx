@@ -13,15 +13,13 @@ export default function Sidebar(props) {
     height: "115vh",
   };
   //open content by id
-  const handleClick = (id) => {
-    props.setId(id)
-  }
+
 
   return (
     <div style={style}>
       <Title>MY DOCUMENTS</Title>
       <NewDocumentBtn createDocument={props.createDocument} />
-      <Documents files={props.files} handleClick={handleClick}></Documents>
+      <Documents files={props.files} setId={props.setId}></Documents>
       <Toggle handleColorChange={props.handleColorChange} setColor={props.setColor} activeColor={props.activeColor} color={props.color} />
     </div>
   );

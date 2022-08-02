@@ -3,7 +3,6 @@ import EditorContainer from "./components/EditorContainer/EditorContainer";
 import Navbar from "./components/Navbar/Navbar";
 import Sidebar from "./components/Sidebar/Sidebar";
 import React, { useState, useEffect } from "react";
-import debounce from "lodash.debounce";
 function App() {
   const style = {
     width: "1440px",
