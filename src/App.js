@@ -12,7 +12,7 @@ function App() {
     display: "flex",
   };
   //useStates
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const [color, setColor] = useState(true);
 
   //open close Sidebar

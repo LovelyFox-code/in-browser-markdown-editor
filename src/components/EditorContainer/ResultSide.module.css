@@ -7,6 +7,8 @@
 }
 .container {
   padding: 0 16px;
+  width: 700px;
+  margin: auto;
 }
 h1 {
   font-family: "Roboto Slab";

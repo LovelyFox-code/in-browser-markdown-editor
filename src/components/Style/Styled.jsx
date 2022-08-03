@@ -73,6 +73,8 @@ export const Container = styled.section`
 `;
 export const EditorSection = styled.div`
   display: flex;
+  justify-content: center;
+  width: 100%;
 `;
 export const TextArea = styled.textarea`
   width: 100%;
@@ -111,7 +113,7 @@ export const Divider = styled.div`
 `;
 
 export const Wrapper = styled.div`
-  width: 100%;
+  /* width: 720px; */
 `;
 
 //MODALS
