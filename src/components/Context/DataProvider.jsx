@@ -1,25 +1,22 @@
-import React, { createContext, useState, useEffect } from 'react'
+import React, { createContext, useState, useEffect } from "react";
 // import file from '../../data/data.json'
 
 export const documentsContext = createContext();
 
-
 export const DataProvider = (props) => {
-  const [documents, setDocuments] = useState([])
+  const [documents, setDocuments] = useState([]);
   const [currentDocument, setCurrentDocument] = useState({});
   const [id, setId] = useState("1");
   const [isClicked, setIsClicked] = useState(false);
   useEffect(() => {
     async function getDocuments() {
-      const response = await fetch("http://localhost:4000/documents")
+      const response = await fetch("http://localhost:4000/documents");
       const result = await response.json();
       setDocuments(result);
     }
     getDocuments();
-    return () => {
-
-    }
-  }, [])
+    return () => { };
+  }, []);
   //CREATE DOCUMENT
   let createdTime = new Date();
   let dd = String(createdTime.getDate()).padStart(2, "0");
@@ -64,7 +61,6 @@ export const DataProvider = (props) => {
     const newDocuments = documents.filter((document) => {
       console.log(document.id !== id);
       return document.id !== id;
-
     });
     console.log(id);
     setDocuments(newDocuments);
@@ -146,18 +142,20 @@ export const DataProvider = (props) => {
     });
   };
   return (
-    <documentsContext.Provider value={{
-      documents: documents,
-      currentDocument: currentDocument,
-      id: id,
-      setId: setId,
-      createDocument: createDocument,
-      deleteDocument: deleteDocument,
-      saveName: saveName,
-      isSaved: isSaved,
-      eventHandler: eventHandler,
-    }}>
+    <documentsContext.Provider
+      value={{
+        documents: documents,
+        currentDocument: currentDocument,
+        id: id,
+        setId: setId,
+        createDocument: createDocument,
+        deleteDocument: deleteDocument,
+        saveName: saveName,
+        isSaved: isSaved,
+        eventHandler: eventHandler,
+      }}
+    >
       {props.children}
     </documentsContext.Provider>
-  )
-}
+  );
+};

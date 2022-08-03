@@ -1,9 +1,7 @@
 import React from "react";
 import { Burger } from "../Style/Styled";
 
-
 export default function BurgerMenu(props) {
-
   return (
     <Burger onClick={props.handleToggle}>
       {props.open ? (

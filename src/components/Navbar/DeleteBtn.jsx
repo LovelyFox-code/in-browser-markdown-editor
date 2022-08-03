@@ -3,12 +3,10 @@ import styled from "styled-components";
 import Modal from "./Modal";
 
 export const Icon = styled.div`
-      margin-right: 24px;
-      cursor: pointer;
+  margin-right: 24px;
+  cursor: pointer;
 `;
 export default function DeleteBtn(props) {
-
-
   const [show, setShow] = useState(true);
   const openModal = () => setShow(false);
   const closeModal = () => setShow(true);
@@ -22,7 +20,9 @@ export default function DeleteBtn(props) {
           />
         </svg>
       </Icon>
-      {!show && <Modal deleteDocument={props.deleteDocument} closeModal={closeModal} />}
+      {!show && (
+        <Modal deleteDocument={props.deleteDocument} closeModal={closeModal} />
+      )}
     </>
   );
 }

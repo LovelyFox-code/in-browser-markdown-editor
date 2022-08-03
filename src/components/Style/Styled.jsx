@@ -19,7 +19,6 @@ export const Label = styled.label.attrs({ htmlFor: "input" })`
   position: relative;
   border-radius: 50%;
   transition: transform 0.2s linear;
-  
 `;
 
 export const Input = styled.input.attrs({ type: "checkbox" })`
@@ -128,13 +127,13 @@ export const Box = styled.div`
   text-align: center;
 `;
 export const Button = styled.button`
-background: #e46643;
-    border-radius: 4px;
-    height: 40px;
-    padding: 10px 30px;
-    color: white;
-    border: none;
-    cursor: pointer;
+  background: #e46643;
+  border-radius: 4px;
+  height: 40px;
+  padding: 10px 30px;
+  color: white;
+  border: none;
+  cursor: pointer;
 `;
 
 export const Overlay = styled.div`
@@ -196,5 +195,5 @@ export const InputNav = styled.input`
   }
 `;
 export const Burger = styled.div`
-cursor: pointer;
-`
+  cursor: pointer;
+`;

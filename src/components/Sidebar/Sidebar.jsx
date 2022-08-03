@@ -12,15 +12,13 @@ export default function Sidebar(props) {
     color: COLORS.white,
     height: "115vh",
   };
-  //open content by id
-
 
   return (
     <div style={style}>
       <Title>MY DOCUMENTS</Title>
-      <NewDocumentBtn createDocument={props.createDocument} />
-      <Documents files={props.files} setId={props.setId}></Documents>
-      <Toggle handleColorChange={props.handleColorChange} setColor={props.setColor} activeColor={props.activeColor} color={props.color} />
+      <NewDocumentBtn />
+      <Documents />
+      <Toggle handleColorChange={props.handleColorChange} color={props.color} />
     </div>
   );
 }

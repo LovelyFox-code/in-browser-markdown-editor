@@ -1,46 +1,45 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 import { Document } from "../Style/Styled";
-import { documentsContext } from "../Context/DataProvider"
+import { documentsContext } from "../Context/DataProvider";
 export const DocumentNav = styled.div`
-display: flex;
-justify-content: flex-end;
-align-items: center;
-padding: 0 24px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 24px;
 `;
 export const Form = styled.form`
-width: 100px;
+  width: 100px;
 `;
 export const Label = styled.label`
-font-family: "Roboto";
-font-style: normal;
-font-weight: 300;
-font-size: 13px;
-line-height: 15px;
-color: #7c8187;
-`;
-export const Input = styled.input`
-background: #2b2d31;
-
-border: none;
-color: #ffffff;
-&::placeholder {
   font-family: "Roboto";
   font-style: normal;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 18px;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 15px;
+  color: #7c8187;
+`;
+export const Input = styled.input`
+  background: #2b2d31;
+
+  border: none;
   color: #ffffff;
-}
+  &::placeholder {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: #ffffff;
+  }
 `;
 export const Icon = styled.svg`
-padding-right: 16px;
+  padding-right: 16px;
 `;
 export default function DocumentName() {
-  const { saveName, id, documents } = useContext(documentsContext)
+  const { saveName, id, documents } = useContext(documentsContext);
 
-
-  const file = documents.find(file => file.id === id);
+  const file = documents.find((file) => file.id === id);
   return (
     <DocumentNav>
       <Icon width="14" height="16" xmlns="http://www.w3.org/2000/svg">
@@ -52,7 +51,11 @@ export default function DocumentName() {
 
       <Form>
         <Label>Document Name</Label>
-        <Input onChange={(e) => saveName(e)} placeholder={file?.name} type="text" />
+        <Input
+          onChange={(e) => saveName(e)}
+          placeholder={file?.name}
+          type="text"
+        />
       </Form>
     </DocumentNav>
   );
