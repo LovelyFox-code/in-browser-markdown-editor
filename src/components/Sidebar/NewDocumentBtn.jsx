@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { COLORS } from '../Common/Colors'
-
-export default function NewDocumentBtn(props) {
+import { documentsContext } from '../Context/DataProvider'
+export default function NewDocumentBtn() {
   const style = {
     width: "70%",
     backgroundColor: COLORS.orange,
@@ -10,7 +10,8 @@ export default function NewDocumentBtn(props) {
     padding: "10px 24px",
 
   }
+  const { createDocument } = useContext(documentsContext)
   return (
-    <div style={style} onClick={props.createDocument}>+ New Document</div>
+    <div style={style} onClick={createDocument}>+ New Document</div>
   )
 }

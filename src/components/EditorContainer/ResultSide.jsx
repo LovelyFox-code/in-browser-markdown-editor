@@ -4,10 +4,8 @@ import styled from "styled-components";
 import ReactMarkdown from "react-markdown";
 import style from "./ResultSide.module.css"
 import SubNav from "./SubNav";
-import { DataContext } from "../Context/DataProvider";
-import { TextArea } from "./MarkdownSide";
 import { Divider, Wrapper } from "../Style/Styled";
-
+import { documentsContext } from "../Context/DataProvider";
 export default function ResultSide(props) {
   const container = {
     padding: "0 16px",
@@ -16,8 +14,7 @@ export default function ResultSide(props) {
     backgroundColor: props.color ? "white" : "black",
   }
 
-  // const [data, setData] = useContext(DataContext);
-
+  const { currentDocument } = useContext(documentsContext);
   return (
     <Wrapper>
       <Divider />
@@ -26,7 +23,7 @@ export default function ResultSide(props) {
       </SubNav>
       <div style={container}>
         <ReactMarkdown>
-          {props.content}
+          {currentDocument.content}
         </ReactMarkdown>
       </div>
     </Wrapper>

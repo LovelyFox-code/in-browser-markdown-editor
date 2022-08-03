@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 import SubNav from "./SubNav";
-import { DataContext } from "../Context/DataProvider";
+import { documentsContext } from "../Context/DataProvider";
 import { Wrapper } from "../Style/Styled";
+
 const TextArea = styled.textarea`
 width: 100%;
 height: 100vh;
@@ -24,11 +25,14 @@ export default function MarkdownSide(props) {
     padding: "0 16px",
     backgroundColor: props.color ? "white" : "black",
   };
+  const { eventHandler } = useContext(documentsContext);
+  const { currentDocument } = useContext(documentsContext);
+
   return (
     <Wrapper>
       <SubNav title="Markdown" color={props.color} />
       <div style={style}>
-        <TextArea textColor={props.color} value={props.content} onChange={props.eventHandler} />
+        <TextArea textColor={props.color} value={currentDocument.content} onChange={eventHandler} />
       </div>
     </Wrapper>
   );

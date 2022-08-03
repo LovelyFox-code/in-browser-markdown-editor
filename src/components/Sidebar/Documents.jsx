@@ -3,11 +3,12 @@ import { documentsContext } from '../Context/DataProvider'
 import { Document, Form, Icon, InputSideBar, Label } from "../Style/Styled";
 
 export default function Documents(props) {
-  console.log(documentsContext);
+
   const { documents } = useContext(documentsContext);
-  console.log(documents);
+  const { setId } = useContext(documentsContext);
   const handleClick = (id) => {
-    props.setId(id)
+    console.log("HANDLE CLICK", id);
+    setId(id)
   }
   const documentsNames = documents.map(document => <Document onClick={() => handleClick(document.id)} key={document.id}>
     <Icon width="14" height="16" xmlns="http://www.w3.org/2000/svg">

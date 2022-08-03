@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import { Document } from "../Style/Styled";
+import { documentsContext } from "../Context/DataProvider"
 export const DocumentNav = styled.div`
 display: flex;
 justify-content: flex-end;
@@ -35,9 +36,11 @@ color: #ffffff;
 export const Icon = styled.svg`
 padding-right: 16px;
 `;
-export default function DocumentName(props) {
+export default function DocumentName() {
+  const { saveName, id, documents } = useContext(documentsContext)
 
-  const file = props.files.find(file => file.id === props.id);
+
+  const file = documents.find(file => file.id === id);
   return (
     <DocumentNav>
       <Icon width="14" height="16" xmlns="http://www.w3.org/2000/svg">
@@ -49,7 +52,7 @@ export default function DocumentName(props) {
 
       <Form>
         <Label>Document Name</Label>
-        <Input onChange={(e) => props.saveName(e)} placeholder={file?.name} type="text" />
+        <Input onChange={(e) => saveName(e)} placeholder={file?.name} type="text" />
       </Form>
     </DocumentNav>
   );
