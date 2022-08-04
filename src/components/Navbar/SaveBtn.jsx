@@ -4,9 +4,11 @@ import { Button } from "../Style/Styled";
 import { documentsContext } from "../Context/DataProvider";
 export const Icon = styled.svg`
   padding-right: 8px;
+  @media only screen and (max-width: 375px) {
+    padding: 0;
+  }
 `;
 export default function SaveBtn(props) {
-  //onClick={() => props.handleClick(file.id)}
   const { isSaved } = useContext(documentsContext);
   return (
     <Button onClick={() => isSaved()}>
@@ -16,7 +18,7 @@ export default function SaveBtn(props) {
           fill="#FFF"
         />
       </Icon>
-      Save Changes
+      <p>Save Changes</p>
     </Button>
   );
 }

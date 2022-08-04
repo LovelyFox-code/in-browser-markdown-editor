@@ -130,6 +130,16 @@ export const Button = styled.button`
   color: white;
   border: none;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  @media only screen and (max-width: 375px) {
+    padding: 12px;
+  }
+  & p {
+    @media only screen and (max-width: 375px) {
+      display: none;
+    }
+  }
 `;
 
 export const Overlay = styled.div`
@@ -157,9 +167,16 @@ export const Nav = styled.nav`
   @media only screen and (max-width: 768px) {
     width: 753px;
   }
+  @media only screen and (max-width: 375px) {
+    width: 375px;
+    justify-content: space-around;
+  }
 `;
 export const Logo = styled.div`
   padding: 0 24px;
+  @media only screen and (max-width: 375px) {
+    display: none;
+  }
 `;
 export const IconDelete = styled.div`
   margin-right: 24px;
