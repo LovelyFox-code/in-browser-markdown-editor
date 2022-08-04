@@ -1,40 +1,6 @@
 import styled from "styled-components";
 import { COLORS } from "../Common/Colors";
 
-export const ModeBtn = styled.button`
-  width: 48px;
-  height: 24px;
-  background: ${COLORS};
-  border-radius: 12px;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-`;
-export const Label = styled.label.attrs({ htmlFor: "input" })`
-  width: 18px;
-  height: 18px;
-  background-color: #252b42;
-  position: relative;
-  border-radius: 50%;
-  transition: transform 0.2s linear;
-`;
-
-export const Input = styled.input.attrs({ type: "checkbox" })`
-  opacity: 0;
-  position: absolute;
-  padding: 40px;
-  z-index: 2;
-  cursor: pointer;
-  &:checked + ${Label} {
-    transform: translateX(20px);
-  }
-  &:checked {
-    transform: translateX(20px);
-  }
-`;
-
 export const Document = styled.div`
   display: flex;
   justify-content: flex-start;
@@ -45,6 +11,14 @@ export const Document = styled.div`
 export const Form = styled.form`
   width: 100px;
   cursor: pointer;
+`;
+export const Label = styled.label`
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 15px;
+  color: #7c8187;
 `;
 export const InputSideBar = styled.input`
   background: ${COLORS.black};
@@ -70,6 +44,10 @@ export const Icon = styled.svg`
 export const Container = styled.section`
   width: 1440px;
   overflow: hidden;
+  @media only screen and (max-width: 768px) {
+    width: 768px;
+    overflow: hidden;
+  }
 `;
 export const EditorSection = styled.div`
   display: flex;
@@ -119,13 +97,13 @@ export const Wrapper = styled.div`
 `;
 export const Side = styled.div`
   display: flex;
-  width: 688px;
+  width: 100%;
   padding: 0 16px;
   background-color: ${(props) => props.theme.editorBody};
 `;
 export const PreviewSide = styled.div`
   padding: 0 16px;
-  width: 700px;
+  width: 100%;
   height: 100%;
   margin: auto;
   background-color: ${(props) => props.theme.editorBody};
@@ -136,11 +114,13 @@ export const Box = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #ffffff;
+  background-color: ${(props) => props.theme.editorBody};
   border-radius: 4px;
   width: 300px;
   padding: 24px;
-  text-align: center;
+  & Button {
+    width: 100%;
+  }
 `;
 export const Button = styled.button`
   background: #e46643;
@@ -154,12 +134,13 @@ export const Button = styled.button`
 
 export const Overlay = styled.div`
   position: absolute;
-  background-color: #15161981;
+  background-color: ${(props) => props.theme.overlay};
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 2;
+  /* z-index: 2; */
+  opacity: 0.5;
 `;
 
 //NAVBAR
@@ -170,9 +151,12 @@ export const Nav = styled.nav`
   justify-content: space-between;
   align-items: center;
   color: white;
-  width: 1410px;
+  max-width: 1410px;
   margin: auto;
   padding: 16px 1%;
+  @media only screen and (max-width: 768px) {
+    width: 753px;
+  }
 `;
 export const Logo = styled.div`
   padding: 0 24px;
@@ -215,4 +199,38 @@ export const Burger = styled.div`
 `;
 export const SVG = styled.svg`
   stroke: red;
+`;
+//toggle button
+export const ModeBtn = styled.button`
+  width: 48px;
+  height: 24px;
+  background: ${COLORS};
+  border-radius: 12px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+`;
+export const LabelToggle = styled.label.attrs({ htmlFor: "input" })`
+  width: 18px;
+  height: 18px;
+  background-color: #252b42;
+  position: relative;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+`;
+
+export const Input = styled.input.attrs({ type: "checkbox" })`
+  opacity: 0;
+  position: absolute;
+  padding: 40px;
+  z-index: 2;
+  cursor: pointer;
+  &:checked + ${LabelToggle} {
+    transform: translateX(20px);
+  }
+  &:checked {
+    transform: translateX(20px);
+  }
 `;

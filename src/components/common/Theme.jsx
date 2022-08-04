@@ -8,6 +8,7 @@ export const LightTheme = {
   highlight: COLORS.dirtyWhite,
   divider: COLORS.lighterGray,
   subNav: COLORS.dirtyWhite,
+  overlay: COLORS.black,
 };
 
 export const DarkTheme = {
@@ -19,4 +20,5 @@ export const DarkTheme = {
   highlight: COLORS.lightBlack,
   divider: COLORS.darkGray,
   subNav: COLORS.black,
+  overlay: COLORS.white,
 };

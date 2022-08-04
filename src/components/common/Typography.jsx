@@ -47,6 +47,7 @@ export const H4 = styled.h4`
   font-weight: 700;
   font-size: 20px;
   line-height: 26px;
+  margin-top: 0;
   color: ${(props) => props.theme.header};
 `;
 export const H5 = styled.h5`

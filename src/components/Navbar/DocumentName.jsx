@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
-import { Document } from "../Style/Styled";
+import { Document, Label } from "../Style/Styled";
 import { documentsContext } from "../Context/DataProvider";
 export const DocumentNav = styled.div`
   display: flex;
@@ -11,14 +11,7 @@ export const DocumentNav = styled.div`
 export const Form = styled.form`
   width: 100px;
 `;
-export const Label = styled.label`
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 300;
-  font-size: 13px;
-  line-height: 15px;
-  color: #7c8187;
-`;
+
 export const Input = styled.input`
   background: #2b2d31;
 
