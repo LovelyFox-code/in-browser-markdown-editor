@@ -93,6 +93,7 @@ export const Divider = styled.div`
 
 export const Wrapper = styled.div`
   width: 100%;
+
   background-color: ${(props) => props.theme.editorBody};
 `;
 export const Side = styled.div`
@@ -104,6 +105,7 @@ export const Side = styled.div`
 export const PreviewSide = styled.div`
   padding: 0 16px;
   width: 100%;
+  max-width: 700px;
   height: 100%;
   margin: auto;
   background-color: ${(props) => props.theme.editorBody};
@@ -226,7 +228,7 @@ export const ModeBtn = styled.button`
   border: none;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   position: relative;
 `;
 export const LabelToggle = styled.label.attrs({ htmlFor: "input" })`
@@ -245,9 +247,9 @@ export const Input = styled.input.attrs({ type: "checkbox" })`
   z-index: 2;
   cursor: pointer;
   &:checked + ${LabelToggle} {
-    transform: translateX(20px);
+    transform: translate(-90%, 0);
   }
   &:checked {
-    transform: translateX(20px);
+    transform: translate(-90%, 0);
   }
 `;

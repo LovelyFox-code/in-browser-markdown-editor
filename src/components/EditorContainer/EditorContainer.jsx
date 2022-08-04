@@ -13,7 +13,8 @@ export default function EditorContainer(props) {
       <EditorSection>
         {showPreview === false ? (
           <>
-            <MarkdownSide color={props.color} /> <Divider />{" "}
+            <MarkdownSide color={props.color} previewHandler={previewHandler} />{" "}
+            <Divider />{" "}
           </>
         ) : null}
 
