@@ -134,6 +134,7 @@ export const Blockquote = styled.blockquote`
     font-weight: 700;
     font-size: 14px;
     line-height: 24px;
+    margin: 0;
     color: ${(props) => props.theme.header};
   }
   & a {
