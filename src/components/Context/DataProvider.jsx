@@ -1,5 +1,4 @@
 import React, { createContext, useState, useEffect } from "react";
-// import file from '../../data/data.json'
 
 export const documentsContext = createContext();
 
@@ -15,7 +14,7 @@ export const DataProvider = (props) => {
       setDocuments(result);
     }
     getDocuments();
-    return () => { };
+    return () => {};
   }, []);
   //CREATE DOCUMENT
   let createdTime = new Date();
@@ -131,7 +130,7 @@ export const DataProvider = (props) => {
       setCurrentDocument(document);
     }
     getDocument();
-    return () => { };
+    return () => {};
   }, [id]);
   const eventHandler = (e) => {
     e.preventDefault();

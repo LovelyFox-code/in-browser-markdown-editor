@@ -18,7 +18,7 @@ export default function Sidebar(props) {
       <Title>MY DOCUMENTS</Title>
       <NewDocumentBtn />
       <Documents />
-      <Toggle handleColorChange={props.handleColorChange} color={props.color} />
+      <Toggle color={props.color} toggleTheme={props.toggleTheme} />
     </div>
   );
 }

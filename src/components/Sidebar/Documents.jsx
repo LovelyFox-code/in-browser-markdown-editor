@@ -3,8 +3,7 @@ import { documentsContext } from "../Context/DataProvider";
 import { Document, Form, Icon, InputSideBar, Label } from "../Style/Styled";
 
 export default function Documents(props) {
-  const { documents } = useContext(documentsContext);
-  const { setId } = useContext(documentsContext);
+  const { documents, setId } = useContext(documentsContext);
   const handleClick = (id) => {
     console.log("HANDLE CLICK", id);
     setId(id);

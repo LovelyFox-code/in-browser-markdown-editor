@@ -89,7 +89,7 @@ export const TextArea = styled.textarea`
 `;
 //SUBNAV
 export const SubNavbar = styled.div`
-  background-color: ${(props) => props.theme.main};
+  background-color: ${(props) => props.theme.subNav};
   display: flex;
   height: 42px;
   align-items: center;
@@ -101,21 +101,35 @@ export const SubNavbar = styled.div`
   font-size: 14px;
   line-height: 16px;
   letter-spacing: 2px;
-  color: ${(props) => props.theme.color};
+  color: ${(props) => props.theme.text};
   text-transform: uppercase;
 `;
 //DIVIDER
 export const Divider = styled.div`
   width: 1px;
   height: 108vh;
-  background-color: ${COLORS.lighterGray};
+  /* background-color: ${COLORS.lighterGray}; */
+  background-color: ${(props) => props.theme.divider};
   position: absolute;
 `;
 
 export const Wrapper = styled.div`
-  /* width: 720px; */
+  width: 100%;
+  background-color: ${(props) => props.theme.editorBody};
 `;
-
+export const Side = styled.div`
+  display: flex;
+  width: 688px;
+  padding: 0 16px;
+  background-color: ${(props) => props.theme.editorBody};
+`;
+export const PreviewSide = styled.div`
+  padding: 0 16px;
+  width: 700px;
+  height: 100%;
+  margin: auto;
+  background-color: ${(props) => props.theme.editorBody};
+`;
 //MODALS
 export const Box = styled.div`
   position: absolute;
@@ -198,4 +212,7 @@ export const InputNav = styled.input`
 `;
 export const Burger = styled.div`
   cursor: pointer;
+`;
+export const SVG = styled.svg`
+  stroke: red;
 `;

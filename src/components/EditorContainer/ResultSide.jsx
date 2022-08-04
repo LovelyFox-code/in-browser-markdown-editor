@@ -1,26 +1,28 @@
 import React, { useContext } from "react";
 import ReactMarkdown from "react-markdown";
-import style from "./ResultSide.module.css";
-import styled from "styled-components";
 import SubNav from "./SubNav";
 import { documentsContext } from "../Context/DataProvider";
-
-export const WrapperPreview = styled.div`
-  width: 100%;
-`;
+import { PreviewSide, Wrapper } from "../Style/Styled";
+import {
+  Blockquote,
+  H1,
+  H2,
+  H3,
+  H4,
+  H5,
+  H6,
+  Li,
+  Ol,
+  P,
+  Pre,
+  Ul,
+} from "../Common/Typography";
 
 export default function ResultSide(props) {
-  const container = {
-    padding: "0 16px",
-    width: "700px",
-    height: "100%",
-    margin: "auto",
-    backgroundColor: props.color ? "white" : "black",
-  };
   const { currentDocument } = useContext(documentsContext);
 
   return (
-    <WrapperPreview>
+    <Wrapper>
       <SubNav
         title="Preview"
         color={props.color}
@@ -44,9 +46,26 @@ export default function ResultSide(props) {
           </div>
         }
       />
-      <div style={container}>
-        <ReactMarkdown>{currentDocument.content}</ReactMarkdown>
-      </div>
-    </WrapperPreview>
+      <PreviewSide>
+        <ReactMarkdown
+          components={{
+            h1: H1,
+            h2: H2,
+            h3: H3,
+            h4: H4,
+            h5: H5,
+            h6: H6,
+            p: P,
+            blockquote: Blockquote,
+            pre: Pre,
+            ol: Ol,
+            ul: Ul,
+            li: Li,
+          }}
+        >
+          {currentDocument.content}
+        </ReactMarkdown>
+      </PreviewSide>
+    </Wrapper>
   );
 }

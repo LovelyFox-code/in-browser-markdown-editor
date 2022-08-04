@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 import SubNav from "./SubNav";
 import { documentsContext } from "../Context/DataProvider";
-import { Wrapper } from "../Style/Styled";
+import { Side, Wrapper } from "../Style/Styled";
 
 const TextArea = styled.textarea`
   width: 100%;
@@ -14,8 +14,8 @@ const TextArea = styled.textarea`
   font-size: 14px;
   outline: none;
   resize: none;
-  background-color: ${(props) => (props.textColor ? "white" : "black")};
-  color: ${(props) => (props.textColor ? "black" : "#C1C4CB")};
+  background-color: ${(props) => props.theme.editorBody};
+  color: ${(props) => props.theme.texMarkdown};
 `;
 
 export default function MarkdownSide(props) {
@@ -30,13 +30,13 @@ export default function MarkdownSide(props) {
   return (
     <Wrapper>
       <SubNav title="Markdown" color={props.color} />
-      <div style={style}>
+      <Side>
         <TextArea
           textColor={props.color}
           value={currentDocument.content}
           onChange={eventHandler}
         />
-      </div>
+      </Side>
     </Wrapper>
   );
 }

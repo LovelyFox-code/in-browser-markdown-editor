@@ -3,6 +3,10 @@ import EditorContainer from "./components/EditorContainer/EditorContainer";
 import Navbar from "./components/Navbar/Navbar";
 import Sidebar from "./components/Sidebar/Sidebar";
 import React, { useState } from "react";
+import { ThemeProvider } from "styled-components";
+import { COLORS } from "./components/Common/Colors";
+import { DarkTheme, LightTheme } from "./components/Common/Theme";
+
 function App() {
   const style = {
     width: "1440px",
@@ -14,26 +18,27 @@ function App() {
   //useStates
   const [open, setOpen] = useState(false);
   const [color, setColor] = useState(true);
-
+  const [theme, setTheme] = useState("light");
+  //theme switcher
+  const toggleTheme = () => {
+    theme === "light" ? setTheme("dark") : setTheme("light");
+    setColor(!color);
+  };
   //open close Sidebar
   const handleToggle = () => {
     setOpen((prev) => !prev);
   };
-  //TOGGLE COLOR-THEME
-  const handleColorChange = () => {
-    setColor(!color);
-  };
 
   return (
-    <div style={flex}>
-      {open ? (
-        <Sidebar handleColorChange={handleColorChange} color={color} />
-      ) : null}
-      <div style={style}>
-        <Navbar handleToggle={handleToggle} open={open}></Navbar>
-        <EditorContainer color={color} />
+    <ThemeProvider theme={theme === "light" ? LightTheme : DarkTheme}>
+      <div style={flex}>
+        {open ? <Sidebar color={color} toggleTheme={toggleTheme} /> : null}
+        <div style={style}>
+          <Navbar handleToggle={handleToggle} open={open}></Navbar>
+          <EditorContainer color={color} />
+        </div>
       </div>
-    </div>
+    </ThemeProvider>
   );
 }
 
