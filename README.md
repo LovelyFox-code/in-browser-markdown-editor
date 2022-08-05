@@ -27,7 +27,7 @@ My learning goals were:
 
 ### Screenshot!
 
-![Preview image](.././in-browser-markdown-editor/public/assets/screenshots/Markdown%20Editor.png)
+![Preview image](/public/assets/screenshots/Neutral%20Nature%20Aesthetic%20Inspiration%20Mood%20Board%20Photo%20Collage.png)
 
 ### Built with
 
