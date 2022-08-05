@@ -3,7 +3,7 @@ import { COLORS } from "../Common/Colors";
 import { documentsContext } from "../Context/DataProvider";
 export default function NewDocumentBtn() {
   const style = {
-    width: "70%",
+    width: "90%",
     backgroundColor: COLORS.orange,
     color: COLORS.white,
     margin: "auto",

@@ -17,6 +17,12 @@ const TextArea = styled.textarea`
   resize: none;
   background-color: ${(props) => props.theme.editorBody};
   color: ${(props) => props.theme.texMarkdown};
+  @media only screen and (max-width: 375px) {
+    max-width: 350px;
+  }
+  @media only screen and (max-width: 425px) {
+    max-width: 425px;
+  }
 `;
 
 export default function MarkdownSide(props) {

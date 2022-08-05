@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
-import { Document, Label } from "../Style/Styled";
+import { Document, Label, Icon } from "../Style/Styled";
 import { documentsContext } from "../Context/DataProvider";
+
 export const DocumentNav = styled.div`
   display: flex;
   justify-content: flex-end;
@@ -26,9 +27,10 @@ export const Input = styled.input`
     color: #ffffff;
   }
 `;
-export const Icon = styled.svg`
-  padding-right: 16px;
-`;
+// export const Icon = styled.svg`
+//   /* padding-right: 16px; */
+//   margin: 8px;
+// `;
 export default function DocumentName() {
   const { saveName, id, documents } = useContext(documentsContext);
 

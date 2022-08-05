@@ -36,7 +36,7 @@ export const InputSideBar = styled.input`
   }
 `;
 export const Icon = styled.svg`
-  padding-right: 16px;
+  margin-right: 16px;
   cursor: pointer;
 `;
 
@@ -93,7 +93,6 @@ export const Divider = styled.div`
 
 export const Wrapper = styled.div`
   width: 100%;
-
   background-color: ${(props) => props.theme.editorBody};
 `;
 export const Side = styled.div`
@@ -134,6 +133,7 @@ export const Button = styled.button`
   cursor: pointer;
   display: flex;
   align-items: center;
+  justify-content: center;
   @media only screen and (max-width: 375px) {
     padding: 12px;
   }
@@ -157,13 +157,13 @@ export const Overlay = styled.div`
 
 //NAVBAR
 export const Nav = styled.nav`
+  max-width: 1440px;
   background-color: ${COLORS.lightBlack};
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   color: white;
-  max-width: 1410px;
   margin: auto;
   padding: 16px 1%;
   @media only screen and (max-width: 768px) {
@@ -215,6 +215,7 @@ export const InputNav = styled.input`
 `;
 export const Burger = styled.div`
   cursor: pointer;
+  background-color: ${COLORS.lighterBlack};
 `;
 export const SVG = styled.svg`
   stroke: red;
@@ -228,8 +229,9 @@ export const ModeBtn = styled.button`
   border: none;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: ${(props) => props.flex};
   position: relative;
+  padding: 5%;
 `;
 export const LabelToggle = styled.label.attrs({ htmlFor: "input" })`
   width: 18px;
@@ -240,16 +242,16 @@ export const LabelToggle = styled.label.attrs({ htmlFor: "input" })`
   transition: transform 0.2s linear;
 `;
 
-export const Input = styled.input.attrs({ type: "checkbox" })`
-  opacity: 0;
-  position: absolute;
-  padding: 40px;
-  z-index: 2;
-  cursor: pointer;
-  &:checked + ${LabelToggle} {
-    transform: translate(-90%, 0);
-  }
-  &:checked {
-    transform: translate(-90%, 0);
-  }
-`;
+// export const Input = styled.input.attrs({ type: "checkbox" })`
+//   opacity: 0;
+//   position: absolute;
+//   padding: 40px;
+//   z-index: 2;
+//   cursor: pointer;
+//   /* &:checked + ${LabelToggle} {
+//     transform: translateX(20px);
+//   }
+//   &:checked {
+//     transform: translateX(20px);
+//   } */
+// `;

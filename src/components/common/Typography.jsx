@@ -1,14 +1,15 @@
 import styled from "styled-components";
 import { COLORS } from "./Colors";
-// @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+
 export const H1 = styled.h1`
+  @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
   font-family: "Roboto Slab";
   font-style: normal;
   font-weight: 700;
   font-size: 32px;
   line-height: 42px;
   color: ${(props) => props.theme.header};
-  margin-top: 0;
+  margin-top: 20px;
 `;
 export const H2 = styled.h2`
   @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;700&display=swap");
@@ -18,6 +19,7 @@ export const H2 = styled.h2`
   font-size: 28px;
   line-height: 37px;
   color: ${(props) => props.theme.header};
+  margin-top: 20px;
 `;
 
 export const H3 = styled.h3`
@@ -28,8 +30,10 @@ export const H3 = styled.h3`
   font-size: 24px;
   line-height: 32px;
   color: ${(props) => props.theme.header};
+  margin-top: 20px;
 `;
 export const Title = styled.h3`
+  @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap");
   font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
@@ -42,6 +46,7 @@ export const Title = styled.h3`
   color: ${COLORS.gray};
 `;
 export const H4 = styled.h4`
+  @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap");
   font-family: "Roboto Slab";
   font-style: normal;
   font-weight: 700;
@@ -49,38 +54,47 @@ export const H4 = styled.h4`
   line-height: 26px;
   margin-top: 0;
   color: ${(props) => props.theme.header};
+  margin-top: 20px;
 `;
 export const H5 = styled.h5`
+  @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap");
   font-family: "Roboto Slab";
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
   line-height: 21px;
   color: ${(props) => props.theme.header};
+  margin-top: 20px;
 `;
 export const H6 = styled.h6`
+  @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap");
   font-family: "Roboto Slab";
   font-style: normal;
   font-weight: 700;
   font-size: 14px;
   line-height: 18px;
   color: ${COLORS.orange};
+  margin-top: 20px;
 `;
 export const P = styled.p`
+  @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap");
   font-family: "Roboto Slab";
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 24px;
   color: ${(props) => props.theme.text};
+  margin-top: 20px;
 `;
 export const BoldP = styled.p`
+  @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap");
   font-family: "Roboto Slab";
   font-style: normal;
   font-weight: 700;
   font-size: 14px;
   line-height: 24px;
   color: ${COLORS.gray};
+  margin-top: 20px;
 `;
 export const MonoP = styled.p`
   @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
@@ -95,6 +109,8 @@ export const Li = styled.li`
   ${(props) => props.theme.text};
 `;
 export const Ol = styled.ol`
+  margin-left: 5%;
+  margin-top: 20px;
   & Li {
     font-family: "Roboto Slab";
     font-style: normal;
@@ -105,6 +121,8 @@ export const Ol = styled.ol`
   }
 `;
 export const Ul = styled.ul`
+  margin-left: 5%;
+  margin-top: 20px;
   & Li {
     font-family: "Roboto Slab";
     font-style: normal;
@@ -117,12 +135,7 @@ export const Ul = styled.ul`
     color: #e46643;
   }
 `;
-// export const ul > li {
 
-// }
-// export const ul > li::marker {
-//   color: #e46643;
-// }
 export const Blockquote = styled.blockquote`
   background-color: ${(props) => props.theme.highlight};
   border-radius: 4px;
@@ -130,6 +143,7 @@ export const Blockquote = styled.blockquote`
   padding: 24px;
   margin: 0;
   color: ${(props) => props.theme.header};
+  margin-top: 20px;
   & p {
     font-style: normal;
     font-weight: 700;
@@ -157,4 +171,5 @@ export const Pre = styled.pre`
   font-size: 14px;
   line-height: 24px;
   color: ${(props) => props.theme.header};
+  margin-top: 20px;
 `;

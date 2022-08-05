@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Button } from "../Style/Styled";
 import { documentsContext } from "../Context/DataProvider";
 export const Icon = styled.svg`
-  padding-right: 8px;
+  margin-right: 8px;
   @media only screen and (max-width: 375px) {
     padding: 0;
   }
