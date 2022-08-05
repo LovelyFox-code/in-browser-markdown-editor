@@ -2,11 +2,19 @@
 
 This is a solution to the In-browser markdown editor challenge on Frontend Mentor.
 
-### Preview!
-[Preview image](./public/assets/preview.jpg)
-### The challenge
+### Converting Figma design with `React JS`, `styled-components`.
 
-Users should be able to:
+My learning goals were:
+
+- Pixel-pretty-close implementation;
+- Work with `UI` and `back-end`;
+- Use `styled-components` for styling;
+
+### Preview!
+
+![Preview image](./public/assets/preview.jpg)
+
+### The challenge
 
 - Create, Read, Update, and Delete markdown documents
 - Name and save documents to be accessed as needed
@@ -17,6 +25,10 @@ Users should be able to:
 - **Bonus**: If you're building a purely front-end project, use localStorage to save the current state in the browser that persists when the browser is refreshed
 - **Bonus**: Build this project as a full-stack application
 
+### Screenshot!
+
+![Preview image](.././in-browser-markdown-editor/public/assets/screenshots/Markdown%20Editor.png)
+
 ### Built with
 
 - Semantic HTML5 markup
@@ -26,4 +38,3 @@ Users should be able to:
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
 - [Styled Components](https://styled-components.com/) - For styles
-
