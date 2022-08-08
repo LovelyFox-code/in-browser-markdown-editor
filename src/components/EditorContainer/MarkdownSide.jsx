@@ -26,12 +26,6 @@ const TextArea = styled.textarea`
 `;
 
 export default function MarkdownSide(props) {
-  const style = {
-    display: "flex",
-    width: "688px",
-    padding: "0 16px",
-    backgroundColor: props.color ? "white" : "black",
-  };
   const { eventHandler, currentDocument } = useContext(documentsContext);
 
   return (
