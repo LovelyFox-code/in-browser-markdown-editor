@@ -7,10 +7,11 @@ This is a solution to the In-browser markdown editor challenge on Frontend Mento
 My learning goals were:
 
 - Pixel-pretty-close implementation;
-- Work with `UI` and `back-end`;
+- Create, Save, Delete, Updaite the documents(`UI, back-end`);
 - Use `styled-components` for styling;
+- Work with State managment system;
 
-### Preview!
+### Design preview!
 
 ![Preview image](./public/assets/preview.jpg)
 
@@ -25,7 +26,7 @@ My learning goals were:
 - **Bonus**: If you're building a purely front-end project, use localStorage to save the current state in the browser that persists when the browser is refreshed
 - **Bonus**: Build this project as a full-stack application
 
-### Screenshot!
+### Screenshot so far!
 
 ![Preview image](/public/assets/screenshots/Neutral%20Nature%20Aesthetic%20Inspiration%20Mood%20Board%20Photo%20Collage.png)
 
@@ -38,3 +39,32 @@ My learning goals were:
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
 - [Styled Components](https://styled-components.com/) - For styles
+
+### How to use:
+
+- clone repository to your local folder`git clone https://github.com/LovelyFox-code/in-browser-markdown-editor`;
+- install dependencies `npm install `;
+- first run fake server `npm run fake-server`;
+- split your terminal and run application `npm start`;
+- enjoy exploring;
+
+### Still TODO
+
+```
+- [] Clear text field in tab when a document is deleted
+- [] When a new document is created, the tab should display its name
+- [] When the name of the doc is edited, you can't select another doc anymore
+
+## Styling
+
+
+## Minor
+
+- updates seem a bit slow (when change the name )
+- Change markdown preview font to roboto
+
+## Bonus
+
+- syntax highlighting for the code blocks (check example in react-markdown)
+
+```
