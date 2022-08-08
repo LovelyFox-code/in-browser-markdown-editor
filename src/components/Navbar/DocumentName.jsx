@@ -32,7 +32,8 @@ export const Input = styled.input`
 //   margin: 8px;
 // `;
 export default function DocumentName() {
-  const { saveName, id, documents } = useContext(documentsContext);
+  const { saveName, id, documents, currentDocument } =
+    useContext(documentsContext);
 
   const file = documents.find((file) => file.id === id);
   return (
@@ -48,7 +49,7 @@ export default function DocumentName() {
         <Label>Document Name</Label>
         <Input
           onChange={(e) => saveName(e)}
-          placeholder={file?.name}
+          placeholder={currentDocument?.name}
           type="text"
         />
       </Form>
