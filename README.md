@@ -52,16 +52,13 @@ My learning goals were:
 
 ```
 - [] Clear text field in tab when a document is deleted
-- [] When a new document is created, the tab should display its name
-- [] When the name of the doc is edited, you can't select another doc anymore
-
+- [] input validator(navBar)
 ## Styling
-
+- [] Style markdown side when is no document;
 
 ## Minor
 
 - updates seem a bit slow (when change the name )
-- Change markdown preview font to roboto
 
 ## Bonus
 
