@@ -10,7 +10,6 @@ export default function Sidebar(props) {
     width: "250px",
     backgroundColor: COLORS.black,
     color: COLORS.white,
-    height: "115vh",
   };
 
   return (

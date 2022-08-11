@@ -7,6 +7,7 @@ export const DataProvider = (props) => {
   const [currentDocument, setCurrentDocument] = useState({});
   const [id, setId] = useState("1");
   const [isClicked, setIsClicked] = useState(false);
+
   useEffect(() => {
     async function getDocuments() {
       const response = await fetch("http://localhost:4000/documents");
@@ -44,10 +45,12 @@ export const DataProvider = (props) => {
     );
     const result = await response.json();
     setCurrentDocument(result);
+    setId(result.id);
     documents.push(result);
   };
   //DELETE DOCUMENT
   const deleteDocument = async () => {
+    console.log(currentDocument.name);
     var requestOptions = {
       method: "DELETE",
     };
@@ -55,18 +58,19 @@ export const DataProvider = (props) => {
       .then((response) => response.text())
       .then((result) => console.log(result))
       .catch((error) => console.log("error", error));
-    setCurrentDocument({});
-    setId("");
+
     const newDocuments = documents.filter((document) => {
       console.log(document.id !== id);
       return document.id !== id;
     });
-    console.log(id);
     setDocuments(newDocuments);
+    setCurrentDocument({});
+    setId("");
   };
-  //SAVE NAME
 
+  //SAVE NAME
   const saveName = async (e) => {
+    setCurrentDocument({ ...currentDocument, name: e.target.value });
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
     console.log("currentDocument", currentDocument);
@@ -87,10 +91,10 @@ export const DataProvider = (props) => {
       }
       return file;
     });
-    console.log("updatedFiles", updatedFiles);
+
     setDocuments(updatedFiles);
-    setCurrentDocument(result);
   };
+
   //SAVE DOCUMENT
   const isSaved = () => {
     setIsClicked(true);

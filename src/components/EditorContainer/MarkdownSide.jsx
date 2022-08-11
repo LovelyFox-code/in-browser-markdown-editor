@@ -54,11 +54,15 @@ export default function MarkdownSide(props) {
         }
       />
       <Side>
-        <TextArea
-          textColor={props.color}
-          value={currentDocument.content}
-          onChange={eventHandler}
-        />
+        {currentDocument.content ? (
+          <TextArea
+            textColor={props.color}
+            value={currentDocument.content}
+            onChange={eventHandler}
+          />
+        ) : (
+          "Please select the doc to get started"
+        )}
       </Side>
     </Wrapper>
   );

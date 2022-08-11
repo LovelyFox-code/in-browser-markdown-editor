@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { documentsContext } from "../Context/DataProvider";
 import BurgerMenu from "./BurgerMenu";
 import SaveBtn from "./SaveBtn";
 import { Row } from "../Style/Grid";
@@ -8,6 +9,7 @@ import DeleteBtn from "./DeleteBtn";
 import { Logo, Nav } from "../Style/Styled";
 
 export default function Navbar(props) {
+  const { currentDocument } = useContext(documentsContext);
   return (
     <Nav>
       <Row>
@@ -24,7 +26,7 @@ export default function Navbar(props) {
           </svg>
         </Logo>
         <Border />
-        <DocumentName />
+        {currentDocument.name && <DocumentName />}
       </Row>
       <Row>
         <DeleteBtn />
