@@ -85,7 +85,7 @@ export const SubNavbar = styled.div`
 //DIVIDER
 export const Divider = styled.div`
   width: 1px;
-  height: 108vh;
+  height: 100%;
   /* background-color: ${COLORS.lighterGray}; */
   background-color: ${(props) => props.theme.divider};
   position: absolute;
@@ -99,6 +99,10 @@ export const Side = styled.div`
   display: flex;
   width: 100%;
   padding: 0 16px;
+  line-height: 24px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
   background-color: ${(props) => props.theme.editorBody};
 `;
 export const PreviewSide = styled.div`
@@ -157,7 +161,7 @@ export const Overlay = styled.div`
 
 //NAVBAR
 export const Nav = styled.nav`
-  max-width: 1440px;
+  /* max-width: 1440px; */
   background-color: ${COLORS.lightBlack};
   display: flex;
   flex-wrap: wrap;
@@ -167,10 +171,10 @@ export const Nav = styled.nav`
   margin: auto;
   padding: 16px 1%;
   @media only screen and (max-width: 768px) {
-    width: 753px;
+    /* width: 753px; */
   }
   @media only screen and (max-width: 375px) {
-    width: 375px;
+    /* width: 375px; */
     justify-content: space-around;
   }
 `;
