@@ -6,14 +6,12 @@ import React, { useState } from "react";
 import { ThemeProvider } from "styled-components";
 import { COLORS } from "./components/Common/Colors";
 import { DarkTheme, LightTheme } from "./components/Common/Theme";
+import { Flex } from "./components/Style/Grid";
 
 function App() {
   const style = {
     width: "1440px",
     overflow: "hidden",
-  };
-  const flex = {
-    display: "flex",
   };
   //useStates
   const [open, setOpen] = useState(false);
@@ -31,13 +29,13 @@ function App() {
 
   return (
     <ThemeProvider theme={theme === "light" ? LightTheme : DarkTheme}>
-      <div style={flex}>
+      <Flex>
         {open ? <Sidebar color={color} toggleTheme={toggleTheme} /> : null}
         <div style={style}>
           <Navbar handleToggle={handleToggle} open={open}></Navbar>
           <EditorContainer color={color} />
         </div>
-      </div>
+      </Flex>
     </ThemeProvider>
   );
 }
