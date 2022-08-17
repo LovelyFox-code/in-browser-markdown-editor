@@ -53,6 +53,10 @@ export const EditorSection = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
+  @media only screen and (max-width: 425px) {
+    display: block;
+    width: 425px;
+  }
 `;
 export const TextArea = styled.textarea`
   width: 100%;
@@ -123,6 +127,7 @@ export const Box = styled.div`
   border-radius: 4px;
   width: 300px;
   padding: 24px;
+  z-index: 999;
   & Button {
     width: 100%;
   }
@@ -138,11 +143,11 @@ export const Button = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  @media only screen and (max-width: 375px) {
+  @media only screen and (max-width: 425px) {
     padding: 12px;
   }
   & p {
-    @media only screen and (max-width: 375px) {
+    @media only screen and (max-width: 425px) {
       display: none;
     }
   }
@@ -155,7 +160,7 @@ export const Overlay = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  /* z-index: 2; */
+  z-index: 2;
   opacity: 0.5;
 `;
 
@@ -173,14 +178,14 @@ export const Nav = styled.nav`
   @media only screen and (max-width: 768px) {
     /* width: 753px; */
   }
-  @media only screen and (max-width: 375px) {
+  @media only screen and (max-width: 425px) {
     /* width: 375px; */
     justify-content: space-around;
   }
 `;
 export const Logo = styled.div`
   padding: 0 24px;
-  @media only screen and (max-width: 375px) {
+  @media only screen and (max-width: 425px) {
     display: none;
   }
 `;
