@@ -55,6 +55,9 @@ My learning goals were:
 - [] input validator(navBar)
 ## Styling
 - [] Style markdown side when is no document;
+- [] onClick of the created document does not change
+- [] header error: Cannot set headers after they are sent to the client
+-
 
 ## Minor
 
