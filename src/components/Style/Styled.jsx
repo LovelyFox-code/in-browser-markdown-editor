@@ -251,6 +251,15 @@ export const LabelToggle = styled.label.attrs({ htmlFor: "input" })`
   transition: transform 0.2s linear;
 `;
 
+export const BorderNav = styled.div`
+  width: 1px;
+  height: 40px;
+  background-color: ${COLORS.darkGray};
+  @media only screen and (max-width: 425px) {
+    display: none;
+  }
+`;
+
 // export const Input = styled.input.attrs({ type: "checkbox" })`
 //   opacity: 0;
 //   position: absolute;
