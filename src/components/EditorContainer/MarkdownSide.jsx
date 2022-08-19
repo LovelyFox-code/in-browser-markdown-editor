@@ -27,7 +27,6 @@ const TextArea = styled.textarea`
 
 export default function MarkdownSide(props) {
   const { eventHandler, currentDocument } = useContext(documentsContext);
-
   return (
     <Wrapper>
       <SubNav

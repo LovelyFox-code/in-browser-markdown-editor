@@ -10,9 +10,10 @@ export const DataProvider = (props) => {
 
   useEffect(() => {
     async function getDocuments() {
-      const response = await fetch("http://localhost:4000/documents");
+      const response = await fetch("http://localhost:5000/documents");
       const result = await response.json();
       setDocuments(result);
+      // setCurrentDocument(result[0]);
     }
     getDocuments();
     return () => {};
@@ -39,8 +40,9 @@ export const DataProvider = (props) => {
       headers: myHeaders,
       body: raw,
     };
+
     const response = await fetch(
-      "http://localhost:4000/documents",
+      "http://localhost:5000/documents",
       requestOptions
     );
     const result = await response.json();
@@ -54,7 +56,7 @@ export const DataProvider = (props) => {
     var requestOptions = {
       method: "DELETE",
     };
-    fetch(`http://localhost:4000/documents/${id}`, requestOptions)
+    fetch(`http://localhost:5000/documents/${id}`, requestOptions)
       .then((response) => response.text())
       .then((result) => console.log(result))
       .catch((error) => console.log("error", error));
@@ -80,7 +82,7 @@ export const DataProvider = (props) => {
       headers: myHeaders,
     };
     const response = await fetch(
-      `http://localhost:4000/documents/${id}`,
+      `http://localhost:5000/documents/${id}`,
       requestOptions
     );
     const result = await response.json();
@@ -110,7 +112,7 @@ export const DataProvider = (props) => {
         headers: myHeaders,
       };
       const response = await fetch(
-        `http://localhost:4000/documents/${id}`,
+        `http://localhost:5000/documents/${id}`,
         requestOptions
       );
       const document = await response.json();
@@ -129,8 +131,9 @@ export const DataProvider = (props) => {
   useEffect(() => {
     //fetch data from API
     async function getDocument() {
-      const response = await fetch(`http://localhost:4000/documents/${id}`);
+      const response = await fetch(`http://localhost:5000/documents/${id}`);
       const document = await response.json();
+      console.log("DOCUMENT", document);
       setCurrentDocument(document);
     }
     getDocument();
