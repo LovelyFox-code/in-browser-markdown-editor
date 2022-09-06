@@ -51,13 +51,11 @@ My learning goals were:
 ### Still TODO
 
 ```
-- [] Clear text field in tab when a document is deleted
 - [] input validator(navBar)
-## Styling
-- [] Style markdown side when is no document;
 - [] onClick of the created document does not change
 - [] header error: Cannot set headers after they are sent to the client
--
+## Styling
+- [] Style markdown side when is no document;
 
 ## Minor
 

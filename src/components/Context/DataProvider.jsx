@@ -1,4 +1,5 @@
 import React, { createContext, useState, useEffect } from "react";
+import { baseURL } from "../../config/API";
 
 export const documentsContext = createContext();
 
@@ -10,7 +11,7 @@ export const DataProvider = (props) => {
 
   useEffect(() => {
     async function getDocuments() {
-      const response = await fetch("http://localhost:5000/documents");
+      const response = await fetch(`${baseURL}/documents`);
       const result = await response.json();
       setDocuments(result);
       // setCurrentDocument(result[0]);
@@ -41,10 +42,7 @@ export const DataProvider = (props) => {
       body: raw,
     };
 
-    const response = await fetch(
-      "http://localhost:5000/documents",
-      requestOptions
-    );
+    const response = await fetch(`${baseURL}/documents`, requestOptions);
     const result = await response.json();
     setCurrentDocument(result);
     setId(result.id);
@@ -56,7 +54,7 @@ export const DataProvider = (props) => {
     var requestOptions = {
       method: "DELETE",
     };
-    fetch(`http://localhost:5000/documents/${id}`, requestOptions)
+    fetch(`${baseURL}/documents/${id}`, requestOptions)
       .then((response) => response.text())
       .then((result) => console.log(result))
       .catch((error) => console.log("error", error));
@@ -81,10 +79,7 @@ export const DataProvider = (props) => {
       body: JSON.stringify({ ...currentDocument, name: e.target.value }),
       headers: myHeaders,
     };
-    const response = await fetch(
-      `http://localhost:5000/documents/${id}`,
-      requestOptions
-    );
+    const response = await fetch(`${baseURL}/documents/${id}`, requestOptions);
     const result = await response.json();
     console.log("RESULT", result);
     const updatedFiles = documents.map((file) => {
@@ -112,7 +107,7 @@ export const DataProvider = (props) => {
         headers: myHeaders,
       };
       const response = await fetch(
-        `http://localhost:5000/documents/${id}`,
+        `${baseURL}/documents/${id}`,
         requestOptions
       );
       const document = await response.json();
@@ -121,7 +116,6 @@ export const DataProvider = (props) => {
 
     if (isClicked) {
       console.log("currentDocument", currentDocument);
-
       saveDocument();
       setIsClicked(false);
     }
@@ -131,7 +125,7 @@ export const DataProvider = (props) => {
   useEffect(() => {
     //fetch data from API
     async function getDocument() {
-      const response = await fetch(`http://localhost:5000/documents/${id}`);
+      const response = await fetch(`${baseURL}/documents/${id}`);
       const document = await response.json();
       console.log("DOCUMENT", document);
       setCurrentDocument(document);
@@ -146,6 +140,7 @@ export const DataProvider = (props) => {
       ...currentDocument,
       content: e.target.value,
     });
+    console.log(currentDocument);
   };
   return (
     <documentsContext.Provider
