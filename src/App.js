@@ -4,7 +4,6 @@ import Navbar from "./components/Navbar/Navbar";
 import Sidebar from "./components/Sidebar/Sidebar";
 import React, { useState } from "react";
 import { ThemeProvider } from "styled-components";
-import { COLORS } from "./components/Common/Colors";
 import { DarkTheme, LightTheme } from "./components/Common/Theme";
 import { Flex } from "./components/Style/Grid";
 

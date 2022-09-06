@@ -7,7 +7,6 @@ export const DataProvider = (props) => {
   const [documents, setDocuments] = useState([]);
   const [currentDocument, setCurrentDocument] = useState({});
   const [id, setId] = useState("1");
-  const [isClicked, setIsClicked] = useState(false);
 
   useEffect(() => {
     async function getDocuments() {
@@ -93,33 +92,18 @@ export const DataProvider = (props) => {
   };
 
   //SAVE DOCUMENT
-  const isSaved = () => {
-    setIsClicked(true);
+  const isSaved = async () => {
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    const requestOptions = {
+      method: "PATCH",
+      body: JSON.stringify(currentDocument),
+      headers: myHeaders,
+    };
+    const response = await fetch(`${baseURL}/documents/${id}`, requestOptions);
+    const document = await response.json();
+    console.log(document);
   };
-
-  useEffect(() => {
-    async function saveDocument() {
-      var myHeaders = new Headers();
-      myHeaders.append("Content-Type", "application/json");
-      const requestOptions = {
-        method: "PATCH",
-        body: JSON.stringify(currentDocument),
-        headers: myHeaders,
-      };
-      const response = await fetch(
-        `${baseURL}/documents/${id}`,
-        requestOptions
-      );
-      const document = await response.json();
-      console.log(document);
-    }
-
-    if (isClicked) {
-      console.log("currentDocument", currentDocument);
-      saveDocument();
-      setIsClicked(false);
-    }
-  }, [isClicked]);
 
   //UPDATE
   useEffect(() => {
