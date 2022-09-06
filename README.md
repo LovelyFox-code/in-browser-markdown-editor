@@ -2,7 +2,7 @@
 
 This is a solution to the In-browser markdown editor challenge on Frontend Mentor.
 
-# [Markdown editor](https://in-browser-markdown-editor-by-fox.netlify.app/) - Check it out my implementation
+# [Markdown editor](https://in-browser-markdown-editor-by-fox.netlify.app/)
 
 ### Converting Figma design with `React JS`, `styled-components`.
 
