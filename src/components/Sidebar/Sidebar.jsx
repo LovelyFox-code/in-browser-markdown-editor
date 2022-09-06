@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { COLORS } from "../Common/Colors";
 import NewDocumentBtn from "./NewDocumentBtn";
 import Documents from "./Documents";

@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
-import { Document, Label, Icon } from "../Style/Styled";
+import { Label, Icon } from "../Style/Styled";
 import { documentsContext } from "../Context/DataProvider";
 
 export const DocumentNav = styled.div`

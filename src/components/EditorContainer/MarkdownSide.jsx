@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 import SubNav from "./SubNav";
 import { documentsContext } from "../Context/DataProvider";
-import { Icon, Side, Wrapper } from "../Style/Styled";
+import { Side, Wrapper } from "../Style/Styled";
 import { useMediaQuery } from "react-responsive";
 const TextArea = styled.textarea`
   width: 100%;

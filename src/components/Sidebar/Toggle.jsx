@@ -1,6 +1,6 @@
 import React from "react";
 import { Row } from "../Style/Grid";
-import { Input, Label, LabelToggle, ModeBtn } from "../Style/Styled";
+import { LabelToggle, ModeBtn } from "../Style/Styled";
 
 export default function Toggle(props) {
   const style = {
