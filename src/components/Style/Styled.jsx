@@ -42,7 +42,7 @@ export const Icon = styled.svg`
 
 //EDITOR CONTAINER
 export const Container = styled.section`
-  width: 1440px;
+  width: 100%;
   overflow: hidden;
   @media only screen and (max-width: 768px) {
     width: 768px;
@@ -102,7 +102,7 @@ export const Wrapper = styled.div`
 export const Side = styled.div`
   display: flex;
   width: 100%;
-  padding: 0 16px;
+  padding-left: 16px;
   line-height: 24px;
   font-style: normal;
   font-weight: 400;

@@ -9,7 +9,7 @@ import { Flex } from "./components/Style/Grid";
 
 function App() {
   const style = {
-    width: "1440px",
+    width: "100%",
     overflow: "hidden",
   };
   //useStates
