@@ -9,9 +9,9 @@ This is a solution to the In-browser markdown editor challenge on Frontend Mento
 My learning goals were:
 
 - Pixel-pretty-close implementation;
-- Create, Save, Delete, Updaite the documents(`UI, back-end`);
+- Create, Save, Delete, Update the documents(`UI, back-end`);
 - Use `styled-components` for styling;
-- Work with State managment system;
+- Work with State management system;
 
 ### Design preview!
 
